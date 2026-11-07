@@ -16,7 +16,11 @@
         "title": "Chamapedia - Geschichtslexikon Cham",
         "year": 2024
       },
-      "tags": ["cham", "geschichte", "etymologie"]
+      "tags": [
+        "cham",
+        "geschichte",
+        "etymologie"
+      ]
     },
     {
       "id": "GEM-CHAM-002",
@@ -38,7 +42,10 @@
         "title": "Gemeindeordnung Cham",
         "year": 2023
       },
-      "tags": ["politik", "buergergemeinde"]
+      "tags": [
+        "politik",
+        "buergergemeinde"
+      ]
     },
     {
       "id": "KAN-ZUG-001",
@@ -60,7 +67,934 @@
         "title": "Staatsbürgerlicher Kurs Kanton Zug",
         "year": 2026
       },
-      "tags": ["kanton", "geografie"]
+      "tags": [
+        "kanton",
+        "geografie"
+      ]
+    },
+    {
+      "id": "FC-075",
+      "type": "flashcard",
+      "topic": "Gemeinde Cham",
+      "subtopic": "Geografie",
+      "difficulty": "Leicht",
+      "question": "Auf welcher Höhe über Meer liegt der Bahnhof von Cham?",
+      "correct_answer": "Der Bahnhof von Cham liegt auf 418 Metern über Meer.",
+      "explanation": "Diese Höhenangabe markiert den Bahnhofstandort im Gemeindegebiet.",
+      "source": {
+        "title": "Wikipedia Cham, Switzerland",
+        "year": 2026
+      }
+    },
+    {
+      "id": "FC-076",
+      "type": "flashcard",
+      "topic": "Gemeinde Cham",
+      "subtopic": "Geografie",
+      "difficulty": "Leicht",
+      "question": "Wie gross ist die Gesamtfläche der Gemeinde Cham?",
+      "correct_answer": "Die Gemeindefläche beträgt 19.82 Quadratkilometer.",
+      "explanation": "Das Gemeindegebiet umfasst rund 19.82 km2 in der Region Ennetsee.",
+      "source": {
+        "title": "Wikipedia Cham, Switzerland",
+        "year": 2026
+      }
+    },
+    {
+      "id": "FC-077",
+      "type": "flashcard",
+      "topic": "Gemeinde Cham",
+      "subtopic": "Geografie",
+      "difficulty": "Leicht",
+      "question": "Welche Postleitzahl hat Cham?",
+      "correct_answer": "Die Postleitzahl von Cham lautet 6330.",
+      "explanation": "Die Postleitzahl wird für den postalischen Verkehr innerhalb der Gemeinde verwendet.",
+      "source": {
+        "title": "Wikipedia Cham, Switzerland",
+        "year": 2026
+      }
+    },
+    {
+      "id": "FC-078",
+      "type": "flashcard",
+      "topic": "Gemeinde Cham",
+      "subtopic": "Geografie",
+      "difficulty": "Mittel",
+      "question": "Welches ist die amtliche BFS-Gemeindenummer (SFOS-Nummer) von Cham?",
+      "correct_answer": "Die amtliche Gemeindenummer lautet 1702.",
+      "explanation": "Diese Nummer wird vom Bundesamt für Statistik für statistische Erhebungen vergeben.",
+      "source": {
+        "title": "Wikipedia Cham, Switzerland",
+        "year": 2026
+      }
+    },
+    {
+      "id": "FC-079",
+      "type": "flashcard",
+      "topic": "Gemeinde Cham",
+      "subtopic": "Geografie",
+      "difficulty": "Leicht",
+      "question": "An welchem Gewässer liegt Cham und welcher Fluss fliesst hindurch?",
+      "correct_answer": "Cham liegt am Nordufer des Zugersees, und die Lorze fliesst durch das Gemeindegebiet.",
+      "explanation": "Der Seeabfluss der Lorze prägt die geografische Lage von Cham in der Reussebene.",
+      "source": {
+        "title": "Wikipedia Cham, Switzerland",
+        "year": 2026
+      }
+    },
+    {
+      "id": "FC-080",
+      "type": "flashcard",
+      "topic": "Gemeinde Cham",
+      "subtopic": "Geografie",
+      "difficulty": "Mittel",
+      "question": "Welche Zuger Nachbargemeinden grenzen direkt an Cham?",
+      "correct_answer": "Die Zuger Nachbargemeinden sind Hünenberg, Zug und Steinhausen.",
+      "explanation": "Cham ist im Ennetsee von diesen Zuger Gemeinden umgeben.",
+      "source": {
+        "title": "Wikipedia Cham ZG",
+        "year": 2026
+      }
+    },
+    {
+      "id": "FC-081",
+      "type": "flashcard",
+      "topic": "Gemeinde Cham",
+      "subtopic": "Geografie",
+      "difficulty": "Mittel",
+      "question": "Welche Zürcher Gemeinden grenzen an das Gemeindegebiet von Cham?",
+      "correct_answer": "Knonau und Maschwanden im Kanton Zürich grenzen an Cham.",
+      "explanation": "Somit grenzt Cham kantonsübergreifend auch an den Kanton Zürich.",
+      "source": {
+        "title": "Wikipedia Cham ZG",
+        "year": 2026
+      }
+    },
+    {
+      "id": "FC-082",
+      "type": "flashcard",
+      "topic": "Gemeinde Cham",
+      "subtopic": "Geografie",
+      "difficulty": "Mittel",
+      "question": "Zu welchen regionalen Wirtschafts- und Landschaftsräumen gehört Cham?",
+      "correct_answer": "Cham gehört zur Region Ennetsee und zur Wirtschaftsregion ZugWest.",
+      "explanation": "Diese geografischen und wirtschaftlichen Zusammenschlüsse prägen die Region westlich von Zug.",
+      "source": {
+        "title": "Wikipedia Cham ZG",
+        "year": 2026
+      }
+    },
+    {
+      "id": "FC-083",
+      "type": "flashcard",
+      "topic": "Gemeinde Cham",
+      "subtopic": "Geografie",
+      "difficulty": "Schwer",
+      "question": "Nennen Sie mindestens sechs Ortschaften oder Weiler auf dem Gemeindegebiet von Cham.",
+      "correct_answer": "Lindencham, Friesencham, Rumentikon, Hagendorn, Bibersee, Niederwil, Oberwil, Hatwil, Islikon, Wannhäusern und Enikon.",
+      "explanation": "Neben dem Hauptort besteht Cham aus zahlreichen historischen Weilern und Dörfern.",
+      "source": {
+        "title": "Wikipedia Cham ZG",
+        "year": 2026
+      }
+    },
+    {
+      "id": "FC-084",
+      "type": "flashcard",
+      "topic": "Gemeinde Cham",
+      "subtopic": "Geografie",
+      "difficulty": "Mittel",
+      "question": "Welche zwei Frauenklöster befinden sich auf dem Gemeindegebiet von Cham?",
+      "correct_answer": "Das Kloster Frauenthal in Hagendorn und das Kloster Heiligkreuz in Cham.",
+      "explanation": "Beide historischen Klöster sind bedeutende sakrale Stätten im Gemeindegebiet.",
+      "source": {
+        "title": "Wikipedia Cham ZG",
+        "year": 2026
+      }
+    },
+    {
+      "id": "FC-085",
+      "type": "flashcard",
+      "topic": "Gemeinde Cham",
+      "subtopic": "Geschichte",
+      "difficulty": "Mittel",
+      "question": "Wie weit zurück lässt sich die menschliche Besiedlung in Cham archäologisch nachweisen?",
+      "correct_answer": "Etwa 9'000 Jahre zurück durch Funde aus der Mittelsteinzeit in der Städtler Allmend und im Grindel.",
+      "explanation": "Menschen hielten sich dort bereits auf, bevor sie nördlich der Alpen sesshaft wurden.",
+      "source": {
+        "title": "Wikipedia Cham ZG",
+        "year": 2026
+      }
+    },
+    {
+      "id": "FC-086",
+      "type": "flashcard",
+      "topic": "Gemeinde Cham",
+      "subtopic": "Geschichte",
+      "difficulty": "Mittel",
+      "question": "Aus welcher Epoche stammen die Siedlungsfunde im Chamer Dorf Oberwil?",
+      "correct_answer": "Aus der mittleren und späten Bronzezeit.",
+      "explanation": "Zahlreiche Funde belegen prähistorische Siedlungen in Oberwil.",
+      "source": {
+        "title": "Wikipedia Cham, Switzerland",
+        "year": 2026
+      }
+    },
+    {
+      "id": "FC-087",
+      "type": "flashcard",
+      "topic": "Gemeinde Cham",
+      "subtopic": "Geschichte",
+      "difficulty": "Schwer",
+      "question": "Welcher bedeutende römische Fund wurde in den Jahren 1944–45 in Hagendorn gemacht?",
+      "correct_answer": "Eine grosse, einzigartige römische Wassermühle mit mehreren Wasserrädern.",
+      "explanation": "Dieser archäologische Fund bezeugt die römische Infrastruktur in der Region.",
+      "source": {
+        "title": "Wikipedia Cham, Switzerland",
+        "year": 2026
+      }
+    },
+    {
+      "id": "FC-088",
+      "type": "flashcard",
+      "topic": "Gemeinde Cham",
+      "subtopic": "Geschichte",
+      "difficulty": "Schwer",
+      "question": "Welches römische Gebäude wurde im Chamer Dorf Heiligkreuz entdeckt?",
+      "correct_answer": "Ein römisches Lagerhaus (Warenhaus) aus der Römerzeit.",
+      "explanation": "Es unterstreicht die historische Bedeutung der Gegend als Handels- und Verkehrsknotenpunkt.",
+      "source": {
+        "title": "Wikipedia Cham, Switzerland",
+        "year": 2026
+      }
+    },
+    {
+      "id": "FC-089",
+      "type": "flashcard",
+      "topic": "Gemeinde Cham",
+      "subtopic": "Geschichte",
+      "difficulty": "Mittel",
+      "question": "Was bedeutet der Ortsname «Cham» sprachlich und worauf bezieht er sich?",
+      "correct_answer": "Er bedeutet «Dorf» und bezieht sich auf eine grosse keltische Siedlung am See.",
+      "explanation": "Der Name hat keltische Ursprünge und wurde später von den Alamannen übernommen.",
+      "source": {
+        "title": "Wikipedia Cham, Switzerland",
+        "year": 2026
+      }
+    },
+    {
+      "id": "FC-090",
+      "type": "flashcard",
+      "topic": "Gemeinde Cham",
+      "subtopic": "Geschichte",
+      "difficulty": "Mittel",
+      "question": "Wann und durch wen wurde Cham erstmals urkundlich erwähnt?",
+      "correct_answer": "Am 16. April 858 als «Chama» durch König Ludwig den Deutschen.",
+      "explanation": "Er schenkte den Hof damals seiner Tochter Hildegard, der Äbtissin des Zürcher Fraumünsters.",
+      "source": {
+        "title": "Wikipedia Cham, Switzerland",
+        "year": 2026
+      }
+    },
+    {
+      "id": "FC-091",
+      "type": "flashcard",
+      "topic": "Gemeinde Cham",
+      "subtopic": "Geschichte",
+      "difficulty": "Schwer",
+      "question": "Welches Ereignis im Jahr 1874 führte zur Aufteilung der bisherigen Chamer Einheitsgemeinde?",
+      "correct_answer": "Die revidierte Kantonsverfassung des Kantons Zug.",
+      "explanation": "Dadurch entstanden in Cham die drei eigenständigen Körperschaften Einwohnergemeinde, Bürgergemeinde und katholische Kirchgemeinde.",
+      "source": {
+        "title": "Gründung der Einwohnergemeinde im Jahr 1874",
+        "year": 1874
+      }
+    },
+    {
+      "id": "FC-092",
+      "type": "flashcard",
+      "topic": "Gemeinde Cham",
+      "subtopic": "Geschichte",
+      "difficulty": "Mittel",
+      "question": "Wann wurde Cham statistisch zur dritten Stadt im Kanton Zug ernannt?",
+      "correct_answer": "Im Jahr 1990.",
+      "explanation": "Dies spiegelte das starke demografische und städtebauliche Wachstum der Gemeinde wider.",
+      "source": {
+        "title": "Wikipedia Cham ZG",
+        "year": 2026
+      }
+    },
+    {
+      "id": "FC-093",
+      "type": "flashcard",
+      "topic": "Gemeinde Cham",
+      "subtopic": "Geschichte",
+      "difficulty": "Schwer",
+      "question": "Für welche Leistungen wurde Cham im Jahr 1991 mit dem Wakkerpreis ausgezeichnet?",
+      "correct_answer": "Für die Bewahrung des Charakters einer industriell geprägten Siedlung und die Erhaltung der Parklandschaft am See.",
+      "explanation": "Der Schweizer Heimatschutz würdigte damit die vorbildliche ortsbauliche Entwicklung Chams.",
+      "source": {
+        "title": "Wikipedia Cham ZG",
+        "year": 2026
+      }
+    },
+    {
+      "id": "FC-094",
+      "type": "flashcard",
+      "topic": "Gemeinde Cham",
+      "subtopic": "Geschichte",
+      "difficulty": "Mittel",
+      "question": "Womit begann 1657 die Industriegeschichte der Papierfabrikation in Cham?",
+      "correct_answer": "Mit einer einfachen Papiermühle an der Lorze.",
+      "explanation": "Daraus entwickelte sich über Jahrhunderte die Papierfabrik Cham, die bis 2015 bestand.",
+      "source": {
+        "title": "Chamapedia",
+        "year": 2026
+      }
+    },
+    {
+      "id": "FC-095",
+      "type": "flashcard",
+      "topic": "Gemeinde Cham",
+      "subtopic": "Politik & Behörden",
+      "difficulty": "Leicht",
+      "question": "Aus wie vielen Mitgliedern besteht der Gemeinderat (die Exekutive) von Cham?",
+      "correct_answer": "Aus fünf Mitgliedern.",
+      "explanation": "Der Gemeinderat führt als Kollegialbehörde die Gemeindeverwaltung und -politik.",
+      "source": {
+        "title": "Wikipedia Cham ZG",
+        "year": 2026
+      }
+    },
+    {
+      "id": "FC-096",
+      "type": "flashcard",
+      "topic": "Gemeinde Cham",
+      "subtopic": "Politik & Behörden",
+      "difficulty": "Mittel",
+      "question": "Wer war während der Legislaturperiode bis 2026 der Gemeindepräsident von Cham und welches Ressort leitete er?",
+      "correct_answer": "Georges Helfenstein (Die Mitte), zuständig für Planung und Hochbau.",
+      "explanation": "Er stand dem fünfköpfigen Gemeinderat vor.",
+      "source": {
+        "title": "Wikipedia Cham ZG",
+        "year": 2026
+      }
+    },
+    {
+      "id": "FC-097",
+      "type": "flashcard",
+      "topic": "Gemeinde Cham",
+      "subtopic": "Politik & Behörden",
+      "difficulty": "Mittel",
+      "question": "Wer ist Vizepräsidentin des Gemeinderats von Cham und welches Departement betreut sie?",
+      "correct_answer": "Christine Blättler-Müller (Die Mitte), zuständig für Soziales und Gesundheit.",
+      "explanation": "Sie vertritt den Gemeindepräsidenten bei Bedarf im Amt.",
+      "source": {
+        "title": "Wikipedia Cham ZG",
+        "year": 2026
+      }
+    },
+    {
+      "id": "FC-098",
+      "type": "flashcard",
+      "topic": "Gemeinde Cham",
+      "subtopic": "Politik & Behörden",
+      "difficulty": "Mittel",
+      "question": "Welches Mitglied des Gemeinderats von Cham leitet das Ressort Finanzen und Verwaltung?",
+      "correct_answer": "Arno Grüter (FDP).",
+      "explanation": "Er ist verantwortlich für den Finanzhaushalt und die Verwaltung der Gemeinde.",
+      "source": {
+        "title": "Wikipedia Cham ZG",
+        "year": 2026
+      }
+    },
+    {
+      "id": "FC-099",
+      "type": "flashcard",
+      "topic": "Gemeinde Cham",
+      "subtopic": "Politik & Behörden",
+      "difficulty": "Mittel",
+      "question": "Welches Departement verantwortet Drin Alaj (SP) im Chamer Gemeinderat?",
+      "correct_answer": "Das Departement Verkehr und Sicherheit.",
+      "explanation": "Er ist damit für Belange der Mobilität und Sicherheit in der Gemeinde zuständig.",
+      "source": {
+        "title": "Wikipedia Cham ZG",
+        "year": 2026
+      }
+    },
+    {
+      "id": "FC-100",
+      "type": "flashcard",
+      "topic": "Gemeinde Cham",
+      "subtopic": "Politik & Behörden",
+      "difficulty": "Mittel",
+      "question": "Welches Ressort leitet Brigitte Wenzin-Widmer (SVP) im Gemeinderat von Cham?",
+      "correct_answer": "Das Departement Bildung.",
+      "explanation": "Sie betreut die schulischen und bildungspolitischen Angelegenheiten der Gemeinde.",
+      "source": {
+        "title": "Wikipedia Cham ZG",
+        "year": 2026
+      }
+    },
+    {
+      "id": "FC-101",
+      "type": "flashcard",
+      "topic": "Gemeinde Cham",
+      "subtopic": "Politik & Behörden",
+      "difficulty": "Leicht",
+      "question": "Wo finden in Cham die Gemeindeversammlungen statt?",
+      "correct_answer": "Im Lorzensaal Cham.",
+      "explanation": "Dort versammeln sich die Stimmbürgerinnen und Stimmbürger zur Ausübung ihrer direktdemokratischen Rechte.",
+      "source": {
+        "title": "Gemeinderat / Budget",
+        "year": 2025
+      }
+    },
+    {
+      "id": "FC-102",
+      "type": "flashcard",
+      "topic": "Gemeinde Cham",
+      "subtopic": "Politik & Behörden",
+      "difficulty": "Mittel",
+      "question": "Wie oft tagt die Gemeindeversammlung in Cham mindestens pro Jahr?",
+      "correct_answer": "Mindestens zweimal pro Jahr.",
+      "explanation": "An diesen Versammlungen wird unter anderem über das Budget und wichtige Sachgeschäfte befunden.",
+      "source": {
+        "title": "Gemeinderat / Budget",
+        "year": 2025
+      }
+    },
+    {
+      "id": "FC-103",
+      "type": "flashcard",
+      "topic": "Finanzen",
+      "subtopic": "Gemeindefinanzen",
+      "difficulty": "Schwer",
+      "question": "Wofür bildet die Gemeinde Cham gemäss dem Gemeinderat primär finanzielle Rückstellungen?",
+      "correct_answer": "Einerseits für Investitionen in ein lebenswertes Cham und neue Aufgaben (z.B. Altersbereich), andererseits um in Krisenzeiten handlungsfähig zu bleiben.",
+      "explanation": "Dies zeigt die verantwortungsvolle Haushaltsführung und langfristige Planung der Gemeinde.",
+      "source": {
+        "title": "Gemeinderat / Budget",
+        "year": 2025
+      }
+    },
+    {
+      "id": "FC-104",
+      "type": "flashcard",
+      "topic": "Gemeinde Cham",
+      "subtopic": "Kultur & Sport",
+      "difficulty": "Mittel",
+      "question": "Wann wurde der SC Cham gegründet und in welcher Liga spielte er in der Saison 2007/08?",
+      "correct_answer": "Gegründet 1910; in der Saison 2007/08 spielte er in der Nationalliga B.",
+      "explanation": "Die Nationalliga B war damals die zweithöchste Schweizer Spielklasse im Fussball.",
+      "source": {
+        "title": "Wikipedia Cham ZG",
+        "year": 2026
+      }
+    },
+    {
+      "id": "FC-105",
+      "type": "flashcard",
+      "topic": "Gemeinde Cham",
+      "subtopic": "Kultur & Sport",
+      "difficulty": "Mittel",
+      "question": "Wann wurde der Turnverein Cham ins Leben gerufen?",
+      "correct_answer": "Am 13. März 1884 als Turnverein Cham 1884.",
+      "explanation": "Er ist einer der traditionsreichen Sportvereine der Gemeinde.",
+      "source": {
+        "title": "Wikipedia Cham ZG",
+        "year": 2026
+      }
+    },
+    {
+      "id": "FC-106",
+      "type": "flashcard",
+      "topic": "Gemeinde Cham",
+      "subtopic": "Infrastruktur",
+      "difficulty": "Leicht",
+      "question": "Welches Schiffahrtsunternehmen bedient die Schiffshaltestelle am Ufer des Zugersees in Cham?",
+      "correct_answer": "Die Zugersee Schifffahrt.",
+      "explanation": "Die Anlegestelle verbindet Cham auf dem Wasserweg mit anderen Zugersee-Gemeinden.",
+      "source": {
+        "title": "Wikipedia Cham ZG",
+        "year": 2026
+      }
+    },
+    {
+      "id": "FC-107",
+      "type": "flashcard",
+      "topic": "Kanton Zug",
+      "subtopic": "Bevölkerung",
+      "difficulty": "Mittel",
+      "question": "Wie hoch war die ständige Wohnbevölkerung von Cham im Jahr 2025?",
+      "correct_answer": "18'273 Einwohner.",
+      "explanation": "Diese amtliche Zahl wurde vom Zivilstands- und Bürgerrechtsdienst des Kantons Zug publiziert.",
+      "source": {
+        "title": "Zivilstands- und Bürgerrechtsdienst",
+        "year": 2025
+      }
+    },
+    {
+      "id": "FC-108",
+      "type": "flashcard",
+      "topic": "Kanton Zug",
+      "subtopic": "Bevölkerung",
+      "difficulty": "Mittel",
+      "question": "Wie hoch war die Gesamteinwohnerzahl (ständige Wohnbevölkerung) aller 11 Gemeinden im Kanton Zug 2025?",
+      "correct_answer": "133'729 Einwohner.",
+      "explanation": "Dies ist die Summe der ständigen Wohnbevölkerung aller elf Zuger Gemeinden.",
+      "source": {
+        "title": "Zivilstands- und Bürgerrechtsdienst",
+        "year": 2025
+      }
+    },
+    {
+      "id": "FC-109",
+      "type": "flashcard",
+      "topic": "Kanton Zug",
+      "subtopic": "Bevölkerung",
+      "difficulty": "Mittel",
+      "question": "Welches ist im Jahr 2025 die bevölkerungsreichste Gemeinde im Kanton Zug?",
+      "correct_answer": "Die Stadt Zug mit 32'112 Einwohnern.",
+      "explanation": "Die Stadt Zug verzeichnet die höchste Einwohnerzahl aller elf Gemeinden.",
+      "source": {
+        "title": "Zivilstands- und Bürgerrechtsdienst",
+        "year": 2025
+      }
+    },
+    {
+      "id": "FC-110",
+      "type": "flashcard",
+      "topic": "Kanton Zug",
+      "subtopic": "Bevölkerung",
+      "difficulty": "Mittel",
+      "question": "Welches ist im Jahr 2025 die kleinste Gemeinde im Kanton Zug nach Einwohnerzahl?",
+      "correct_answer": "Neuheim mit 2'527 Einwohnern.",
+      "explanation": "Neuheim weist unter allen Zuger Gemeinden die geringste ständige Wohnbevölkerung auf.",
+      "source": {
+        "title": "Zivilstands- und Bürgerrechtsdienst",
+        "year": 2025
+      }
+    },
+    {
+      "id": "FC-111",
+      "type": "flashcard",
+      "topic": "Kanton Zug",
+      "subtopic": "Bevölkerung",
+      "difficulty": "Schwer",
+      "question": "Wie viele Einwohner hatten Baar und Risch gemäss der kantonalen Statistik im Jahr 2025?",
+      "correct_answer": "Baar hatte 25'004 Einwohner und Risch zählte 11'674 Einwohner.",
+      "explanation": "Baar ist nach der Stadt Zug die zweitgrösste Gemeinde im Kanton.",
+      "source": {
+        "title": "Zivilstands- und Bürgerrechtsdienst",
+        "year": 2025
+      }
+    },
+    {
+      "id": "FC-112",
+      "type": "flashcard",
+      "topic": "Kanton Zug",
+      "subtopic": "Gemeinden",
+      "difficulty": "Leicht",
+      "question": "Aus wie vielen Gemeinden besteht der Kanton Zug insgesamt?",
+      "correct_answer": "Aus elf Gemeinden.",
+      "explanation": "Der Kanton Zug ist in elf politische Gemeinden unterteilt.",
+      "source": {
+        "title": "Zivilstands- und Bürgerrechtsdienst",
+        "year": 2025
+      }
+    },
+    {
+      "id": "FC-113",
+      "type": "flashcard",
+      "topic": "Kanton Zug",
+      "subtopic": "Föderalismus & Einbürgerung",
+      "difficulty": "Mittel",
+      "question": "Aus welchen drei autonomen Gemeinwesen setzt sich das föderale Einbürgerungsverfahren in der Schweiz zusammen?",
+      "correct_answer": "Aus Bürgergemeinde, Kanton und Bund (Schweizerische Eidgenossenschaft).",
+      "explanation": "Dies spiegelt den föderalen Staatsaufbau und das Zusammenspiel der drei Ebenen bei der Verleihung des Bürgerrechts wider.",
+      "source": {
+        "title": "Zivilstands- und Bürgerrechtsdienst",
+        "year": 2025
+      }
+    },
+    {
+      "id": "FC-114",
+      "type": "flashcard",
+      "topic": "Kanton Zug",
+      "subtopic": "Gemeindeorganisation",
+      "difficulty": "Mittel",
+      "question": "Welche zwei Arten von Gemeinden existieren in jeder der elf Zuger Gemeinden nebeneinander?",
+      "correct_answer": "Je eine Einwohnergemeinde und je eine Bürgergemeinde.",
+      "explanation": "Beide Körperschaften erfüllen unterschiedliche gesetzliche Aufgaben und Verwaltungsbereiche.",
+      "source": {
+        "title": "Zivilstands- und Bürgerrechtsdienst",
+        "year": 2025
+      }
+    },
+    {
+      "id": "FC-115",
+      "type": "flashcard",
+      "topic": "Kanton Zug",
+      "subtopic": "Gemeindeorganisation",
+      "difficulty": "Mittel",
+      "question": "Wer bildet die Einwohnergemeinde im Kanton Zug und wofür ist sie zuständig?",
+      "correct_answer": "Die Einwohnergemeinde umfasst alle Einwohnerinnen und Einwohner, wobei die politischen Rechte (Stimm- und Wahlrecht) den stimmberechtigten Schweizer Bürgern zustehen; sie ist für die kommunale Politik und Verwaltung zuständig.",
+      "explanation": "Die Einwohnergemeinde regelt die allgemeinen kommunalen Angelegenheiten und öffentlichen Dienstleistungen für alle Bewohner.",
+      "source": {
+        "title": "Zivilstands- und Bürgerrechtsdienst",
+        "year": 2025
+      }
+    },
+    {
+      "id": "FC-116",
+      "type": "flashcard",
+      "topic": "Kanton Zug",
+      "subtopic": "Gemeindeorganisation",
+      "difficulty": "Schwer",
+      "question": "Wie heisst die Legislative in der Stadt Zug und seit wann ersetzt sie die Gemeindeversammlung?",
+      "correct_answer": "Der Grosse Gemeinderat (ein Parlament mit 40 Mitgliedern), bestehend seit 1963.",
+      "explanation": "Die Stadt Zug hat als einzige Zuger Gemeinde ein Parlamentssystem auf Stufe Einwohnergemeinde.",
+      "source": {
+        "title": "Zivilstands- und Bürgerrechtsdienst",
+        "year": 2025
+      }
+    },
+    {
+      "id": "FC-117",
+      "type": "flashcard",
+      "topic": "Kanton Zug",
+      "subtopic": "Gemeindeorganisation",
+      "difficulty": "Mittel",
+      "question": "Aus wie vielen Mitgliedern besteht der Gemeinderat (Exekutive) in Cham und in Baar?",
+      "correct_answer": "In Cham aus 5 Mitgliedern und in Baar aus 7 Mitgliedern.",
+      "explanation": "Die Grösse der Exekutive variiert je nach Gemeindegrösse.",
+      "source": {
+        "title": "Zivilstands- und Bürgerrechtsdienst",
+        "year": 2025
+      }
+    },
+    {
+      "id": "FC-118",
+      "type": "flashcard",
+      "topic": "Kanton Zug",
+      "subtopic": "Gemeindeorganisation",
+      "difficulty": "Mittel",
+      "question": "Wie wird die Exekutive in der Stadt Zug offiziell bezeichnet?",
+      "correct_answer": "Als Stadtrat.",
+      "explanation": "In der Stadt Zug heisst das ausführende Organ im Gegensatz zu den anderen Gemeinden Stadtrat.",
+      "source": {
+        "title": "Zivilstands- und Bürgerrechtsdienst",
+        "year": 2025
+      }
+    },
+    {
+      "id": "FC-119",
+      "type": "flashcard",
+      "topic": "Kanton Zug",
+      "subtopic": "Judikative",
+      "difficulty": "Mittel",
+      "question": "Welches Organ vertritt die Judikative auf Ebene der Einwohnergemeinde im Kanton Zug?",
+      "correct_answer": "Der Friedensrichter.",
+      "explanation": "Er fungiert als Schlichtungsbehörde bei zivilrechtlichen Streitigkeiten.",
+      "source": {
+        "title": "Zivilstands- und Bürgerrechtsdienst",
+        "year": 2025
+      }
+    },
+    {
+      "id": "FC-120",
+      "type": "flashcard",
+      "topic": "Kanton Zug",
+      "subtopic": "Bürgergemeinde",
+      "difficulty": "Mittel",
+      "question": "Welche Behörden bilden die Legislative und die Exekutive der Bürgergemeinde?",
+      "correct_answer": "Die Bürgergemeindeversammlung (Legislative) und der Bürgerrat (Exekutive).",
+      "explanation": "Die Bürgergemeinde kümmert sich um spezifische Bürgergüter und das Einbürgerungsverfahren.",
+      "source": {
+        "title": "Zivilstands- und Bürgerrechtsdienst",
+        "year": 2025
+      }
+    },
+    {
+      "id": "FC-121",
+      "type": "flashcard",
+      "topic": "Kanton Zug",
+      "subtopic": "Geschichte",
+      "difficulty": "Leicht",
+      "question": "In welches Jahr fällt die Unterzeichnung des Bundesbriefes der Urkantone Uri, Schwyz und Unterwalden?",
+      "correct_answer": "Ins Jahr 1291.",
+      "explanation": "Dies gilt als traditioneller Ursprung der Eidgenossenschaft.",
+      "source": {
+        "title": "Wichtigste Daten der Zuger- und Schweizer Geschichte",
+        "year": 2026
+      }
+    },
+    {
+      "id": "FC-122",
+      "type": "flashcard",
+      "topic": "Kanton Zug",
+      "subtopic": "Geschichte",
+      "difficulty": "Mittel",
+      "question": "Wann fand die historische Schlacht bei Morgarten statt?",
+      "correct_answer": "Im Jahr 1315.",
+      "explanation": "Ein wichtiger Meilenstein in der frühen eidgenössischen Konfliktgeschichte.",
+      "source": {
+        "title": "Wichtigste Daten der Zuger- und Schweizer Geschichte",
+        "year": 2026
+      }
+    },
+    {
+      "id": "FC-123",
+      "type": "flashcard",
+      "topic": "Kanton Zug",
+      "subtopic": "Geschichte",
+      "difficulty": "Mittel",
+      "question": "Wann traten Stadt und Amt Zug in den eidgenössischen Bund ein?",
+      "correct_answer": "Im Jahr 1352.",
+      "explanation": "Damit wurde Zug Teil der damaligen Eidgenossenschaft.",
+      "source": {
+        "title": "Wichtigste Daten der Zuger- und Schweizer Geschichte",
+        "year": 2026
+      }
+    },
+    {
+      "id": "FC-124",
+      "type": "flashcard",
+      "topic": "Kanton Zug",
+      "subtopic": "Geschichte",
+      "difficulty": "Schwer",
+      "question": "Welche Naturkatastrophe ereignete sich am 4. März 1435 in der Stadt Zug?",
+      "correct_answer": "Ein Teil der Zuger Altstadt versank im See und riss 60 Menschen in den Tod.",
+      "explanation": "Dieses historische Unglück ist tief im kantonalen Gedächtnis verankert.",
+      "source": {
+        "title": "Wichtigste Daten der Zuger- und Schweizer Geschichte",
+        "year": 2026
+      }
+    },
+    {
+      "id": "FC-125",
+      "type": "flashcard",
+      "topic": "Kanton Zug",
+      "subtopic": "Geschichte",
+      "difficulty": "Schwer",
+      "question": "Wann erhielt die Stadt Zug vom deutschen König Sigismund die Reichsfreiheit?",
+      "correct_answer": "Im Jahr 1415.",
+      "explanation": "Dies stärkte die rechtliche Autonomie der Stadt im Heiligen Römischen Reich.",
+      "source": {
+        "title": "Wichtigste Daten der Zuger- und Schweizer Geschichte",
+        "year": 2026
+      }
+    },
+    {
+      "id": "FC-126",
+      "type": "flashcard",
+      "topic": "Kanton Zug",
+      "subtopic": "Geschichte",
+      "difficulty": "Mittel",
+      "question": "Wer war 1934 der erste Zuger Bundesrat in der Schweizer Geschichte?",
+      "correct_answer": "Philipp Etter aus Menzingen.",
+      "explanation": "Er prägte als langjähriger Bundesrat die eidgenössische Politik.",
+      "source": {
+        "title": "Kanton Zug Geschichte",
+        "year": 2026
+      }
+    },
+    {
+      "id": "FC-127",
+      "type": "flashcard",
+      "topic": "Kanton Zug",
+      "subtopic": "Geschichte",
+      "difficulty": "Schwer",
+      "question": "Was legte die Zuger Kantonsverfassung im Jahr 1894 fest?",
+      "correct_answer": "Das Proporzsystem für die Wahl aller Behörden.",
+      "explanation": "Damit wurde das Verhältniswahlrecht im Kanton Zug eingeführt.",
+      "source": {
+        "title": "Kanton Zug Geschichte",
+        "year": 2026
+      }
+    },
+    {
+      "id": "FC-128",
+      "type": "flashcard",
+      "topic": "Kanton Zug",
+      "subtopic": "Einbürgerung",
+      "difficulty": "Mittel",
+      "question": "Wie lange muss man gemäss den seit 1. Januar 2025 geltenden Regeln im Kanton Zug gewohnt haben?",
+      "correct_answer": "Mindestens fünf Jahre im Kanton Zug.",
+      "explanation": "Dies ist eine der Grundvoraussetzungen für die ordentliche Einbürgerung im Kanton.",
+      "source": {
+        "title": "Ordentliche Einbürgerung",
+        "year": 2025
+      }
+    },
+    {
+      "id": "FC-129",
+      "type": "flashcard",
+      "topic": "Kanton Zug",
+      "subtopic": "Einbürgerung",
+      "difficulty": "Mittel",
+      "question": "Welche Wohnsitzfrist in der Gemeinde gilt seit 1. Januar 2025 zum Zeitpunkt der Gesuchseinreichung?",
+      "correct_answer": "Die letzten drei Jahre ununterbrochen in der Einbürgerungsgemeinde.",
+      "explanation": "Dies stellt sicher, dass Bewerber gut in ihrer Wohngemeinde verwurzelt sind.",
+      "source": {
+        "title": "Ordentliche Einbürgerung",
+        "year": 2025
+      }
+    },
+    {
+      "id": "FC-130",
+      "type": "flashcard",
+      "topic": "Kanton Zug",
+      "subtopic": "Einbürgerung",
+      "difficulty": "Schwer",
+      "question": "Werden Aufenthaltsjahre im Kanton Zug bei der ordentlichen Einbürgerung doppelt gezählt?",
+      "correct_answer": "Nein, die Aufenthaltsjahre im Kanton werden im Gegensatz zum Bund nie doppelt gezählt.",
+      "explanation": "Hier gelten spezifische kantonale Bestimmungen neben dem Bundesrecht.",
+      "source": {
+        "title": "Ordentliche Einbürgerung",
+        "year": 2025
+      }
+    },
+    {
+      "id": "FC-131",
+      "type": "flashcard",
+      "topic": "Kanton Zug",
+      "subtopic": "Einbürgerung",
+      "difficulty": "Schwer",
+      "question": "Welche Erleichterung gilt für junge in der Schweiz geborene Ausländer, die das Gesuch vor dem 22. Altersjahr stellen?",
+      "correct_answer": "Sie erhalten nach der eidgenössischen Bewilligung das Gemeindebürgerrecht, wenn sie mindestens fünf Jahre im Kanton Zug wohnten.",
+      "explanation": "Dies erleichtert der jungen integrierten Generation den Zugang zum Bürgerrecht.",
+      "source": {
+        "title": "Ordentliche Einbürgerung",
+        "year": 2025
+      }
+    },
+    {
+      "id": "FC-132",
+      "type": "flashcard",
+      "topic": "Kanton Zug",
+      "subtopic": "Einbürgerung",
+      "difficulty": "Mittel",
+      "question": "Wie lange dauert ein ordentliches Einbürgerungsverfahren im Kanton Zug ungefähr?",
+      "correct_answer": "Circa zwei Jahre.",
+      "explanation": "Die Prüfung durch Bund, Kanton und Gemeinde nimmt diese Zeitspanne in Anspruch.",
+      "source": {
+        "title": "Ordentliche Einbürgerung",
+        "year": 2026
+      }
+    },
+    {
+      "id": "FC-133",
+      "type": "flashcard",
+      "topic": "Kanton Zug",
+      "subtopic": "Einbürgerung",
+      "difficulty": "Schwer",
+      "question": "Nach welchem kantonalen Erlass richten sich Rechtsmittel gegen Entscheide im Einbürgerungsverfahren?",
+      "correct_answer": "Nach dem Gesetz über den Rechtsschutz in Verwaltungssachen (BGS 162.1).",
+      "explanation": "Dieses Gesetz regelt die juristischen Anfechtungsmöglichkeiten im Kanton Zug.",
+      "source": {
+        "title": "Ordentliche Einbürgerung",
+        "year": 2026
+      }
+    },
+    {
+      "id": "FC-134",
+      "type": "flashcard",
+      "topic": "Schweiz",
+      "subtopic": "Staatssystem",
+      "difficulty": "Mittel",
+      "question": "Aus welchen drei Staatsgewalten besteht das klassische System der Gewaltenteilung in der Schweiz?",
+      "correct_answer": "Aus Legislative (Parlament), Exekutive (Regierung) und Judikative (Gerichte).",
+      "explanation": "Die Gewaltenteilung verhindert Machtkonzentration und sichert gegenseitige Kontrolle.",
+      "source": {
+        "title": "Zivilstands- und Bürgerrechtsdienst",
+        "year": 2025
+      }
+    },
+    {
+      "id": "FC-135",
+      "type": "flashcard",
+      "topic": "Schweiz",
+      "subtopic": "Geschichte",
+      "difficulty": "Leicht",
+      "question": "In welchem Jahr wurde der moderne Schweizer Bundesstaat gegründet?",
+      "correct_answer": "Im Jahr 1848.",
+      "explanation": "Mit der Bundesverfassung von 1848 entstand die moderne Eidgenossenschaft.",
+      "source": {
+        "title": "Kanton Zug Geschichte",
+        "year": 2026
+      }
+    },
+    {
+      "id": "FC-136",
+      "type": "flashcard",
+      "topic": "Schweiz",
+      "subtopic": "Parlament",
+      "difficulty": "Leicht",
+      "question": "Welches sind die beiden Kammern der Schweizer Bundesversammlung?",
+      "correct_answer": "Der Nationalrat und der Ständerat.",
+      "explanation": "Beide Kammern bilden zusammen das eidgenössische Parlament in Bern.",
+      "source": {
+        "title": "Zivilstands- und Bürgerrechtsdienst",
+        "year": 2025
+      }
+    },
+    {
+      "id": "FC-137",
+      "type": "flashcard",
+      "topic": "Schweiz",
+      "subtopic": "Regierung",
+      "difficulty": "Leicht",
+      "question": "Aus wie vielen Mitgliedern besteht der Schweizer Bundesrat?",
+      "correct_answer": "Aus sieben Mitgliedern.",
+      "explanation": "Der Bundesrat bildet als Kollegialbehörde die Landesregierung der Schweiz.",
+      "source": {
+        "title": "Politisches System Schweiz",
+        "year": 2026
+      }
+    },
+    {
+      "id": "FC-138",
+      "type": "flashcard",
+      "topic": "Schweiz",
+      "subtopic": "Demokratie",
+      "difficulty": "Mittel",
+      "question": "Was kennzeichnet die direkte Demokratie in der Schweiz?",
+      "correct_answer": "Bürgerinnen und Bürger stimmen direkt über Sachfragen, Verfassungsänderungen und Gesetze ab (z.B. mittels Initiative und Referendum).",
+      "explanation": "Dies unterscheidet die Schweiz von rein repräsentativen Demokratien.",
+      "source": {
+        "title": "Politisches System Schweiz",
+        "year": 2026
+      }
+    },
+    {
+      "id": "FC-139",
+      "type": "flashcard",
+      "topic": "Schweiz",
+      "subtopic": "Geschichte",
+      "difficulty": "Mittel",
+      "question": "Wann wurde das eidgenössische Stimm- und Wahlrecht für Frauen in der Schweiz eingeführt?",
+      "correct_answer": "Im Jahr 1971.",
+      "explanation": "In diesem Jahr stimmten die Schweizer Stimmberechtigten der Einführung auf Bundesebene zu.",
+      "source": {
+        "title": "Kanton Zug Geschichte",
+        "year": 2026
+      }
+    },
+    {
+      "id": "FC-140",
+      "type": "flashcard",
+      "topic": "Schweiz",
+      "subtopic": "Geschichte",
+      "difficulty": "Schwer",
+      "question": "In welchem Jahr wurde die eidgenössische Volksinitiative als politisches Recht eingeführt?",
+      "correct_answer": "Im Jahr 1891.",
+      "explanation": "Damit erhielten Stimmberechtigte das Recht, Verfassungsänderungen direkt anzuregen.",
+      "source": {
+        "title": "Kanton Zug Geschichte",
+        "year": 2026
+      }
     }
   ]
 }

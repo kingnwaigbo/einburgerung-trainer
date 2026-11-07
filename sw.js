@@ -1,10 +1,12 @@
 
-const CACHE_NAME = 'einbuergerung-v1.0.1';
+const CACHE_NAME = 'einbuergerung-v1.1.0';
 
 const ASSETS = [
   './',
   './index.html',
   './app.js',
+  './tailwind-offline.css',
+  './style.css',
   './questions.json',
   './manifest.webmanifest',
   './icon-192.png',
