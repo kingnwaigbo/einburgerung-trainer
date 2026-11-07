@@ -205,7 +205,7 @@ class App {
     document.getElementById('flashcardCounter').textContent = `${this.currentFCIndex + 1} / ${this.questions.length}`;
     document.getElementById('fcTopicFront').textContent = q.topic;
     document.getElementById('fcDiffFront').textContent = q.difficulty || 'Mittel';
-    document.getElementById('fcQuestionTextFront').textContent = q.question;
+    document.getElementById('fcQuestionFront').textContent = q.question;
 
     document.getElementById('fcTopicBack').textContent = q.topic;
     document.getElementById('fcAnswerBack').textContent = q.correct_answer;
