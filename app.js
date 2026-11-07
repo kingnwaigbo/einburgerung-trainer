@@ -123,20 +123,9 @@ registerServiceWorker() {
   navigator.serviceWorker.register('./sw.js', {
     updateViaCache: 'none'
   }).then(reg => {
-    reg.update().catch(console.warn);
-
-    let refreshing = false;
-
-    navigator.serviceWorker.addEventListener(
-      'controllerchange',
-      () => {
-        if (refreshing) return;
-        refreshing = true;
-        window.location.reload();
-      }
-    );
+    console.log('Service Worker registered');
   }).catch(err => {
-    console.error('Service Worker Fehler:', err);
+    console.error('Service Worker error:', err);
   });
 }
 
