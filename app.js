@@ -41,14 +41,20 @@ class LearningDB {
     });
   }
 
-  async saveQuestions(questions) {
+async saveQuestions(questions) {
+  return new Promise((resolve, reject) => {
     const tx = this.db.transaction('questions', 'readwrite');
     const store = tx.objectStore('questions');
+
+    tx.oncomplete = () => resolve();
+    tx.onerror = () => reject(tx.error);
+    tx.onabort = () => reject(tx.error);
+
     for (const q of questions) {
       store.put(q);
     }
-    return tx.complete;
-  }
+  });
+}
 
   async getProgress(id) {
     return new Promise((resolve) => {
@@ -66,11 +72,16 @@ class LearningDB {
     });
   }
 
-  async saveProgress(progressObj) {
+async saveProgress(progressObj) {
+  return new Promise((resolve, reject) => {
     const tx = this.db.transaction('user_progress', 'readwrite');
+
+    tx.oncomplete = () => resolve();
+    tx.onerror = () => reject(tx.error);
+    tx.onabort = () => reject(tx.error);
+
     tx.objectStore('user_progress').put(progressObj);
-    return tx.complete;
-  }
+  });
 }
 
 // App Core Controller
