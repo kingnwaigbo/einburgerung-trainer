@@ -116,20 +116,30 @@ class App {
     this.registerServiceWorker();
   }
 
-  registerServiceWorker() {
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('./sw.js').then((reg) => {
-        reg.addEventListener('updatefound', () => {
-          const newWorker = reg.installing;
-          newWorker.addEventListener('statechange', () => {
-            if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-              document.getElementById('updateBanner').classList.remove('hidden');
-            }
-          });
-        });
-      });
-    }
-  }
+
+registerServiceWorker() {
+  if (!('serviceWorker' in navigator)) return;
+
+  navigator.serviceWorker.register('./sw.js', {
+    updateViaCache: 'none'
+  }).then(reg => {
+    reg.update().catch(console.warn);
+
+    let refreshing = false;
+
+    navigator.serviceWorker.addEventListener(
+      'controllerchange',
+      () => {
+        if (refreshing) return;
+        refreshing = true;
+        window.location.reload();
+      }
+    );
+  }).catch(err => {
+    console.error('Service Worker Fehler:', err);
+  });
+}
+
 
   showScreen(screenId) {
     document.querySelectorAll('main > section').forEach(s => s.classList.add('hidden'));
