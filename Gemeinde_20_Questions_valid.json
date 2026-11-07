@@ -1,0 +1,524 @@
+{
+  "dataset_version": "1.0.0",
+  "schema_version": "2020-12",
+  "questions": [
+    {
+      "id": "GEM-CHAM-001",
+      "source_collection": "gemeinde",
+      "topic": "Gemeinde Cham",
+      "subtopic": "Verwaltung & Politik",
+      "type": "multiple_choice",
+      "question": "Wie heisst das Gemeindehaus der Einwohnergemeinde Cham?",
+      "correct_answer": "Mandelhof",
+      "explanation": "Der Mandelhof ist der Sitz des Gemeinderates und der Gemeindeverwaltung der Einwohnergemeinde Cham.",
+      "options": [
+        "Mandelhof",
+        "Stadthaus",
+        "Lorzensaal",
+        "Schloss St. Andreas"
+      ],
+      "difficulty": "einfach",
+      "source": {
+        "title": "Cham ZG – Wikipedia",
+        "year": 2026
+      },
+      "tags": [
+        "cham",
+        "verwaltung"
+      ]
+    },
+    {
+      "id": "GEM-CHAM-002",
+      "source_collection": "gemeinde",
+      "topic": "Gemeinde Cham",
+      "subtopic": "Geografie & Gewässer",
+      "type": "multiple_choice",
+      "question": "Welcher Fluss entspringt dem Zugersee und fließt durch das Gemeindegebiet von Cham?",
+      "correct_answer": "Lorze",
+      "explanation": "Die Lorze ist der Seeabfluss des Zugersees und fließt mitten durch das Gemeindegebiet von Cham.",
+      "options": [
+        "Lorze",
+        "Reuss",
+        "Sihl",
+        "Aare"
+      ],
+      "difficulty": "einfach",
+      "source": {
+        "title": "Cham ZG – Wikipedia",
+        "year": 2026
+      },
+      "tags": [
+        "cham",
+        "geografie"
+      ]
+    },
+    {
+      "id": "GEM-CHAM-003",
+      "source_collection": "gemeinde",
+      "topic": "Gemeinde Cham",
+      "subtopic": "Verwaltung & Politik",
+      "type": "multiple_choice",
+      "question": "Was ist der Hauptunterschied zwischen der Einwohnergemeinde Cham und der Bürgergemeinde Cham?",
+      "correct_answer": "Die Einwohnergemeinde ist für alle Einwohner zuständig, während die Bürgergemeinde speziell das Bürgerrecht verwaltet und Bürgergüter pflegt.",
+      "explanation": "Die Einwohnergemeinde deckt Aufgaben wie Schule, Infrastruktur und Steuern für alle Einwohner ab. Die Bürgergemeinde führt Einbürgerungen durch und verwaltet eigene Bürgergüter sowie soziale Einrichtungen.",
+      "options": [
+        "Die Einwohnergemeinde ist für alle Einwohner zuständig, während die Bürgergemeinde speziell das Bürgerrecht verwaltet und Bürgergüter pflegt.",
+        "Die Bürgergemeinde zieht die Gemeindesteuern ein, während die Einwohnergemeinde nur für Kulturprojekte zuständig ist.",
+        "Die Einwohnergemeinde betrifft nur ausländische Staatsangehörige, während die Bürgergemeinde für Schweizer da ist.",
+        "Es gibt keinen Unterschied; beide Begriffe bezeichnen dieselbe administrative Behörde."
+      ],
+      "difficulty": "mittel",
+      "source": {
+        "title": "Bürgergemeinde Cham |",
+        "year": 2026
+      },
+      "tags": [
+        "cham",
+        "politik",
+        "einbürgerung"
+      ]
+    },
+    {
+      "id": "GEM-CHAM-004",
+      "source_collection": "gemeinde",
+      "topic": "Gemeinde Cham",
+      "subtopic": "Geschichte & Industrie",
+      "type": "multiple_choice",
+      "question": "Welches berühmte Industrieunternehmen wurde 1866 in Cham gegründet und schloss sich 1905 mit Nestlé zusammen?",
+      "correct_answer": "Anglo-Swiss Condensed Milk Company",
+      "explanation": "Die Anglo-Swiss Condensed Milk Company wurde 1866 von der amerikanischen Familie Page in Cham gegründet und fusionierte 1905 mit Nestlé.",
+      "options": [
+        "Anglo-Swiss Condensed Milk Company",
+        "Papierfabrik Cham AG",
+        "Maggi AG",
+        "Swissair"
+      ],
+      "difficulty": "mittel",
+      "source": {
+        "title": "Cham ZG – Wikipedia",
+        "year": 2026
+      },
+      "tags": [
+        "cham",
+        "geschichte",
+        "industrie"
+      ]
+    },
+    {
+      "id": "GEM-CHAM-005",
+      "source_collection": "gemeinde",
+      "topic": "Gemeinde Cham",
+      "subtopic": "Geschichte & Geografie",
+      "type": "multiple_choice",
+      "question": "Welche zwei historischen Kernbereiche von Cham liegen jeweils auf einer Seite der Lorze?",
+      "correct_answer": "Kirchbühl und Städtli",
+      "explanation": "Cham entwickelte sich historisch an beiden Ufern der Lorze mit den Ortsteilen Kirchbühl (Kirchenhügel) und Städtli (historischer Marktbereich).",
+      "options": [
+        "Kirchbühl und Städtli",
+        "Lindencham und Friesencham",
+        "Hagendorn und Niederwil",
+        "Oberwil und Rumentikon"
+      ],
+      "difficulty": "mittel",
+      "source": {
+        "title": "Cham, Switzerland - Wikipedia",
+        "year": 2026
+      },
+      "tags": [
+        "cham",
+        "geografie",
+        "geschichte"
+      ]
+    },
+    {
+      "id": "GEM-CHAM-006",
+      "source_collection": "gemeinde",
+      "topic": "Gemeinde Cham",
+      "subtopic": "Kultur & Sehenswürdigkeiten",
+      "type": "multiple_choice",
+      "question": "Wie heisst der 46'000 Quadratmeter große Park im englischen Landschaftsstil direkt am Zugersee in Cham?",
+      "correct_answer": "Villettepark",
+      "explanation": "Der Villettepark wurde 1865 angelegt und prägt als weitläufiger Park am Seeufer das Bild von Cham.",
+      "options": [
+        "Villettepark",
+        "Hirsgarten",
+        "Städtler Allmend",
+        "Lorzenpark"
+      ],
+      "difficulty": "einfach",
+      "source": {
+        "title": "Cham ZG – Wikipedia",
+        "year": 2026
+      },
+      "tags": [
+        "cham",
+        "freizeit",
+        "sehenswürdigkeiten"
+      ]
+    },
+    {
+      "id": "GEM-CHAM-007",
+      "source_collection": "gemeinde",
+      "topic": "Gemeinde Cham",
+      "subtopic": "Verwaltung & Politik",
+      "type": "multiple_choice",
+      "question": "Aus wie vielen Mitgliedern besteht der Gemeinderat (Exekutive) der Einwohnergemeinde Cham?",
+      "correct_answer": "5 Mitglieder",
+      "explanation": "Der Gemeinderat von Cham besteht aus fünf Mitgliedern, welche die Fachabteilungen der Exekutive leiten.",
+      "options": [
+        "5 Mitglieder",
+        "7 Mitglieder",
+        "9 Mitglieder",
+        "3 Mitglieder"
+      ],
+      "difficulty": "einfach",
+      "source": {
+        "title": "Cham ZG – Wikipedia",
+        "year": 2026
+      },
+      "tags": [
+        "cham",
+        "politik",
+        "gemeinderat"
+      ]
+    },
+    {
+      "id": "GEM-CHAM-008",
+      "source_collection": "gemeinde",
+      "topic": "Gemeinde Cham",
+      "subtopic": "Kultur & Sehenswürdigkeiten",
+      "type": "multiple_choice",
+      "question": "Wie heisst das historische Schloss auf der Halbinsel am Zugerseeufer in Cham?",
+      "correct_answer": "Schloss St. Andreas",
+      "explanation": "Das Schloss St. Andreas befindet sich auf einer markanten Halbinsel am Zugersee in Cham.",
+      "options": [
+        "Schloss St. Andreas",
+        "Schloss Frauenthal",
+        "Schloss Buonas",
+        "Schloss Hünenberg"
+      ],
+      "difficulty": "mittel",
+      "source": {
+        "title": "Cham ZG – Wikipedia",
+        "year": 2026
+      },
+      "tags": [
+        "cham",
+        "geschichte",
+        "sehenswürdigkeiten"
+      ]
+    },
+    {
+      "id": "KAN-ZUG-001b",
+      "source_collection": "kanton",
+      "topic": "Einbürgerung Kanton Zug",
+      "subtopic": "Wohnsitzfristen",
+      "type": "multiple_choice",
+      "question": "Wie lange muss eine Person vor Gesuchseinreichung ununterbrochen in der Einbürgerungsgemeinde gewohnt haben?",
+      "correct_answer": "Die letzten 3 Jahre ununterbrochen",
+      "explanation": "Im Kanton Zug ist für die ordentliche Einbürgerung ein ununterbrochener Wohnsitz von mindestens 3 Jahren in der Einbürgerungsgemeinde vorgeschrieben.",
+      "options": [
+        "Die letzten 3 Jahre ununterbrochen",
+        "Die letzten 12 Monate ununterbrochen",
+        "Die letzten 5 Jahre ununterbrochen",
+        "Die letzten 10 Jahre ununterbrochen"
+      ],
+      "difficulty": "mittel",
+      "source": {
+        "title": "Ordentliche Einbürgerung",
+        "year": 2025
+      },
+      "tags": [
+        "einbürgerung",
+        "wohnsitz",
+        "kanton zug"
+      ]
+    },
+    {
+      "id": "KAN-ZUG-002b",
+      "source_collection": "kanton",
+      "topic": "Einbürgerung Kanton Zug",
+      "subtopic": "Wohnsitzfristen",
+      "type": "multiple_choice",
+      "question": "Welche kantonale Mindestwohnsitzdauer gilt im Kanton Zug für die ordentliche Einbürgerung?",
+      "correct_answer": "Mindestens 5 Jahre im Kanton Zug",
+      "explanation": "Für ein Einbürgerungsgesuch im Kanton Zug müssen Gesuchstellende insgesamt mindestens 5 Jahre Wohnsitz im Kanton nachweisen.",
+      "options": [
+        "Mindestens 5 Jahre im Kanton Zug",
+        "Mindestens 2 Jahre im Kanton Zug",
+        "Mindestens 8 Jahre im Kanton Zug",
+        "Mindestens 10 Jahre im Kanton Zug"
+      ],
+      "difficulty": "einfach",
+      "source": {
+        "title": "Ordentliche Einbürgerung",
+        "year": 2025
+      },
+      "tags": [
+        "einbürgerung",
+        "wohnsitz",
+        "kanton zug"
+      ]
+    },
+    {
+      "id": "GEM-CHAM-009",
+      "source_collection": "gemeinde",
+      "topic": "Gemeinde Cham",
+      "subtopic": "Kultur & Religion",
+      "type": "multiple_choice",
+      "question": "Welches Zisterzienserinnenkloster befindet sich im Chamer Weiler Hagendorn an der Lorze?",
+      "correct_answer": "Kloster Frauenthal",
+      "explanation": "Das Kloster Frauenthal ist ein im 13. Jahrhundert gegründetes Zisterzienserinnenkloster im Chamer Ortsteil Hagendorn.",
+      "options": [
+        "Kloster Frauenthal",
+        "Kloster Heiligkreuz",
+        "Kloster Einsiedeln",
+        "Kloster Fahr"
+      ],
+      "difficulty": "mittel",
+      "source": {
+        "title": "Cham ZG – Wikipedia",
+        "year": 2026
+      },
+      "tags": [
+        "cham",
+        "kloster",
+        "geschichte"
+      ]
+    },
+    {
+      "id": "GEM-CHAM-010",
+      "source_collection": "gemeinde",
+      "topic": "Gemeinde Cham",
+      "subtopic": "Geschichte",
+      "type": "multiple_choice",
+      "question": "In welchem Jahr wurde Cham nach dem Einmarsch französischer Truppen aus der Stadtzuger Vogtei entlassen und konstituierte sich als eigenständige Gemeinde?",
+      "correct_answer": "1798",
+      "explanation": "Im Jahr 1798 wurde Cham unter der Helvetischen Republik als eigenständige Gemeinde konstituiert.",
+      "options": [
+        "1798",
+        "1360",
+        "1874",
+        "1905"
+      ],
+      "difficulty": "anspruchsvoll",
+      "source": {
+        "title": "Cham ZG – Wikipedia",
+        "year": 2026
+      },
+      "tags": [
+        "cham",
+        "geschichte",
+        "politik"
+      ]
+    },
+    {
+      "id": "GEM-CHAM-011",
+      "source_collection": "gemeinde",
+      "topic": "Gemeinde Cham",
+      "subtopic": "Geschichte & Sprachforschung",
+      "type": "multiple_choice",
+      "question": "Welchen Ursprung hat der Ortsname «Cham» und was bedeutete das Ursprungswort?",
+      "correct_answer": "Keltischer Ursprung (kāmā = Dorf)",
+      "explanation": "Der Name Cham geht auf das keltische Wort kāmā zurück, was «Dorf» bedeutet.",
+      "options": [
+        "Keltischer Ursprung (kāmā = Dorf)",
+        "Alemannischer Ursprung (ham = Heim)",
+        "Römischer Ursprung (cama = Feld)",
+        "Althochdeutscher Ursprung (cham = Flusskrümmung)"
+      ],
+      "difficulty": "anspruchsvoll",
+      "source": {
+        "title": "Cham ZG – Wikipedia",
+        "year": 2026
+      },
+      "tags": [
+        "cham",
+        "ortsname",
+        "geschichte"
+      ]
+    },
+    {
+      "id": "GEM-CHAM-012",
+      "source_collection": "gemeinde",
+      "topic": "Gemeinde Cham",
+      "subtopic": "Architektur & Auszeichnungen",
+      "type": "multiple_choice",
+      "question": "Welchen renommierten Preis erhielt die Gemeinde Cham 1991 für die Ortsplanung und die Erhaltung der Parklandschaft am See?",
+      "correct_answer": "Wakkerpreis",
+      "explanation": "1991 wurde Cham vom Schweizer Heimatschutz mit dem Wakkerpreis für vorbildliche Ortsplanung ausgezeichnet.",
+      "options": [
+        "Wakkerpreis",
+        "European City Award",
+        "Schweizer Kulturpreis",
+        "Prix Lignum"
+      ],
+      "difficulty": "mittel",
+      "source": {
+        "title": "Cham ZG – Wikipedia",
+        "year": 2026
+      },
+      "tags": [
+        "cham",
+        "auszeichnung",
+        "ortsplanung"
+      ]
+    },
+    {
+      "id": "GEM-CHAM-013",
+      "source_collection": "gemeinde",
+      "topic": "Gemeinde Cham",
+      "subtopic": "Städtepartnerschaft",
+      "type": "multiple_choice",
+      "question": "Mit welcher gleichnamigen Stadt in Deutschland pflegt Cham seit 1981 eine offizielle Partnerschaft?",
+      "correct_answer": "Cham (Oberpfalz)",
+      "explanation": "Cham (Zug) unterhält seit 1981 eine aktive Gemeindepartnerschaft mit Cham in der Oberpfalz (Deutschland).",
+      "options": [
+        "Cham (Oberpfalz)",
+        "Cham (Bayern)",
+        "Cham (Schwarzwald)",
+        "Cham (Allgäu)"
+      ],
+      "difficulty": "mittel",
+      "source": {
+        "title": "Cham ZG – Wikipedia",
+        "year": 2026
+      },
+      "tags": [
+        "cham",
+        "partnerschaft",
+        "international"
+      ]
+    },
+    {
+      "id": "GEM-CHAM-014",
+      "source_collection": "gemeinde",
+      "topic": "Gemeinde Cham",
+      "subtopic": "Persönlichkeiten",
+      "type": "multiple_choice",
+      "question": "Wer war die erste Ehrenbürgerin von Cham und Bekanntheit als Philanthropin sowie Begründerin der Klinik Adelheid?",
+      "correct_answer": "Adelheid Page-Schwerzmann",
+      "explanation": "Adelheid Page-Schwerzmann (1853–1925) engagierte sich für soziale Belange und die Klinik Adelheid und wurde erste Ehrenbürgerin von Cham.",
+      "options": [
+        "Adelheid Page-Schwerzmann",
+        "Elisabeth Kaufmann",
+        "Hannah Villiger",
+        "Ruth Pache"
+      ],
+      "difficulty": "anspruchsvoll",
+      "source": {
+        "title": "Cham ZG – Wikipedia",
+        "year": 2026
+      },
+      "tags": [
+        "cham",
+        "persönlichkeiten",
+        "ehrenbürgerin"
+      ]
+    },
+    {
+      "id": "GEM-CHAM-015",
+      "source_collection": "gemeinde",
+      "topic": "Gemeinde Cham",
+      "subtopic": "Geschichte & Medien",
+      "type": "multiple_choice",
+      "question": "Wie heisst das digitale Geschichtslexikon der Gemeinde Cham, das von Bürger- und Einwohnergemeinde getragen wird?",
+      "correct_answer": "Chamapedia",
+      "explanation": "Chamapedia ist eine digitale Enzyklopädie zur Dokumentation der Geschichte und Chronik der Gemeinde Cham.",
+      "options": [
+        "Chamapedia",
+        "Chamer Chronik",
+        "Zugpedia",
+        "Ennetsee-Lexikon"
+      ],
+      "difficulty": "einfach",
+      "source": {
+        "title": "Chamapedia",
+        "year": 2026
+      },
+      "tags": [
+        "cham",
+        "geschichte",
+        "lexikon"
+      ]
+    },
+    {
+      "id": "GEM-CHAM-016",
+      "source_collection": "gemeinde",
+      "topic": "Gemeinde Cham",
+      "subtopic": "Freizeit & Naherholung",
+      "type": "multiple_choice",
+      "question": "Welche Seeuferanlage in Cham bietet Sicht auf die Rigi, eine Kurschiffanlegestelle und die «Hirsi Seelounge»?",
+      "correct_answer": "Hirsgarten",
+      "explanation": "Der Hirsgarten ist eine zentrale Park- und Seeuferanlage am Zugersee in Cham mit Schiffsanlegestelle und Sommerlounge.",
+      "options": [
+        "Hirsgarten",
+        "Villettepark",
+        "Bärenkreisel",
+        "Papierigleisweg"
+      ],
+      "difficulty": "einfach",
+      "source": {
+        "title": "Gemeindeinfo_100.pdf",
+        "year": 2025
+      },
+      "tags": [
+        "cham",
+        "freizeit",
+        "zugersee"
+      ]
+    },
+    {
+      "id": "KAN-ZUG-003b",
+      "source_collection": "kanton",
+      "topic": "Einbürgerung Bundesrecht",
+      "subtopic": "Bewilligung",
+      "type": "multiple_choice",
+      "question": "Welche Ausländerbewilligung ist auf Bundesebene für ein ordentliches Einbürgerungsgesuch zwingend erforderlich?",
+      "correct_answer": "Niederlassungsbewilligung (Ausweis C)",
+      "explanation": "Auf Bundesebene setzt die Einreichung eines ordentlichen Einbürgerungsgesuchs zwingend die Niederlassungsbewilligung (Ausweis C) voraus.",
+      "options": [
+        "Niederlassungsbewilligung (Ausweis C)",
+        "Aufenthaltsbewilligung (Ausweis B)",
+        "Vorläufige Aufnahme (Ausweis F)",
+        "Kurzaufenthaltsbewilligung (Ausweis L)"
+      ],
+      "difficulty": "einfach",
+      "source": {
+        "title": "Ordentliche Einbürgerung",
+        "year": 2025
+      },
+      "tags": [
+        "einbürgerung",
+        "bundesrecht",
+        "bewilligung"
+      ]
+    },
+    {
+      "id": "KAN-ZUG-004b",
+      "source_collection": "kanton",
+      "topic": "Einbürgerung Kanton Zug",
+      "subtopic": "Sprachanforderungen",
+      "type": "multiple_choice",
+      "question": "Welche Sprachkenntnisse in Deutsch verlangt der Kanton Zug ab dem 1. Januar 2025 bei Gesuchseinreichung?",
+      "correct_answer": "Mündlich B2 und schriftlich B1",
+      "explanation": "Nach den Zuger Vorgaben müssen Gesuchstellende ab dem 1.1.2025 mündliche Deutschkenntnisse auf Niveau B2 und schriftliche auf Niveau B1 nachweisen.",
+      "options": [
+        "Mündlich B2 und schriftlich B1",
+        "Mündlich B1 und schriftlich A2",
+        "Mündlich C1 und schriftlich B2",
+        "Mündlich A2 und schriftlich A1"
+      ],
+      "difficulty": "anspruchsvoll",
+      "source": {
+        "title": "Ordentliche Einbürgerung",
+        "year": 2025
+      },
+      "tags": [
+        "einbürgerung",
+        "sprache",
+        "kanton zug"
+      ]
+    }
+  ]
+}

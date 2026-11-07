@@ -1,0 +1,66 @@
+{
+  "dataset_version": "1.0.0",
+  "schema_version": "2020-12",
+  "questions": [
+    {
+      "id": "GEM-CHAM-001",
+      "source_collection": "gemeinde",
+      "topic": "Gemeinde Cham",
+      "subtopic": "Geschichte & Kultur",
+      "type": "flashcard",
+      "question": "Was bedeutet der keltische Ortsname 'Cham' ursprünglich?",
+      "correct_answer": "Der Name stammt vom keltischen Wort 'Cama' ab, was 'Krummung' oder 'Biegung' bedeutet (bezogen auf die Lorze).",
+      "explanation": "Cham liegt an der charakteristischen Flussbiegung der Lorze am Ausfluss aus dem Zugersee.",
+      "difficulty": "einfach",
+      "source": {
+        "title": "Chamapedia - Geschichtslexikon Cham",
+        "year": 2024
+      },
+      "tags": ["cham", "geschichte", "etymologie"]
+    },
+    {
+      "id": "GEM-CHAM-002",
+      "source_collection": "gemeinde",
+      "topic": "Gemeinde Cham",
+      "subtopic": "Politik & Behörden",
+      "type": "multiple_choice",
+      "question": "Was ist der Hauptunterschied zwischen der Einwohnergemeinde und der Bürgergemeinde Cham?",
+      "correct_answer": "Die Einwohnergemeinde versorgt alle Bewohner (Schulen, Infrastruktur), während die Bürgergemeinde das Bürgerrecht verwaltet und Ländereien besitzt.",
+      "options": [
+        "Die Einwohnergemeinde versorgt alle Bewohner (Schulen, Infrastruktur), während die Bürgergemeinde das Bürgerrecht verwaltet und Ländereien besitzt.",
+        "Die Bürgergemeinde ist nur für Steuern zuständig.",
+        "Es gibt keinen Unterschied, beide Behörden sind identisch.",
+        "Die Einwohnergemeinde gehört dem Kanton Zug."
+      ],
+      "explanation": "In Cham bestehen Einwohnergemeinde (Mandelhof) und Bürgergemeinde als eigenständige öffentlich-rechtliche Körperschaften.",
+      "difficulty": "mittel",
+      "source": {
+        "title": "Gemeindeordnung Cham",
+        "year": 2023
+      },
+      "tags": ["politik", "buergergemeinde"]
+    },
+    {
+      "id": "KAN-ZUG-001",
+      "source_collection": "kanton",
+      "topic": "Kanton Zug",
+      "subtopic": "Geografie & Gemeinden",
+      "type": "multiple_choice",
+      "question": "Wie viele politische Gemeinden umfasst der Kanton Zug?",
+      "correct_answer": "11 Gemeinden",
+      "options": [
+        "11 Gemeinden",
+        "26 Gemeinden",
+        "8 Gemeinden",
+        "15 Gemeinden"
+      ],
+      "explanation": "Der Kanton Zug gliedert sich in genau 11 Einwohnergemeinden: Zug, Baar, Cham, Hünenberg, Steinhausen, Risch, Walchwil, Unterägeri, Oberägeri, Menzingen, Neuheim.",
+      "difficulty": "einfach",
+      "source": {
+        "title": "Staatsbürgerlicher Kurs Kanton Zug",
+        "year": 2026
+      },
+      "tags": ["kanton", "geografie"]
+    }
+  ]
+}

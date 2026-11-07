@@ -1,0 +1,84 @@
+Du bist ein Experte für den Kanton Zug und die Schweizer Staatskunde.
+Analysiere die Quelltexte über den Kanton Zug und erstelle 20 Lernfragen für die Einbürgerung.
+
+Gib das Ergebnis AUSSCHLIESSLICH als gültiges JSON-Objekt aus (keine Einleitung, kein Markdown).
+
+Verwende das Prefix "KAN-ZUG-" für alle IDs.
+Nutze die Themen: Kanton Zug, Schweizer Politik, Geografie, Rechte und Pflichten.
+
+Verwende exakt folgendes Format:
+
+{
+  "dataset_version": "1.0.0",
+  "schema_version": "2020-12",
+  "questions": [
+    {
+      "id": "KAN-ZUG-001",
+      "source_collection": "gemeinde",
+      "topic": "Gemeinde Cham",
+      "subtopic": "Geschichte & Kultur",
+      "type": "multiple_choice",
+      "question": "Wie heisst das Gemeindehaus der Einwohnergemeinde Cham?",
+      "correct_answer": "Mandelhof",
+      "explanation": "Der Mandelhof ist der Sitz des Gemeinderates und der Gemeindeverwaltung Cham.",
+      "options": [
+        "Mandelhof",
+        "Stadthaus",
+        "Lorzensaal",
+        "Schloss St. Andreas"
+      ],
+      "difficulty": "einfach",
+      "source": {
+        "title": "Gemeinde Cham Portrait",
+        "year": 2026
+      },
+      "tags": ["cham", "verwaltung"]
+    }
+  ]
+}
+
+
+Validiere die JSON gegen diese Schema:
+
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EinbuergerungQuestionsDataset",
+  "type": "object",
+  "required": ["dataset_version", "schema_version", "questions"],
+  "properties": {
+    "dataset_version": { "type": "string" },
+    "schema_version": { "type": "string" },
+    "questions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "source_collection", "topic", "subtopic", "type", "question", "correct_answer", "difficulty", "source"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^(GEM|KAN)-[A-Z0-9_-]+" },
+          "source_collection": { "enum": ["gemeinde", "kanton"] },
+          "topic": { "type": "string" },
+          "subtopic": { "type": "string" },
+          "type": { "enum": ["flashcard", "multiple_choice", "interview"] },
+          "question": { "type": "string" },
+          "correct_answer": { "type": "string" },
+          "explanation": { "type": "string" },
+          "options": {
+            "type": "array",
+            "items": { "type": "string" },
+            "minItems": 4,
+            "maxItems": 4
+          },
+          "difficulty": { "enum": ["einfach", "mittel", "anspruchsvoll"] },
+          "source": {
+            "type": "object",
+            "required": ["title", "year"],
+            "properties": {
+              "title": { "type": "string" },
+              "year": { "type": "integer" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

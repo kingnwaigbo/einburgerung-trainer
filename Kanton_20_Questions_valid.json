@@ -1,0 +1,426 @@
+{
+  "dataset_version": "1.0.0",
+  "schema_version": "2020-12",
+  "questions": [
+    {
+      "id": "KAN-ZUG-001",
+      "source_collection": "kanton",
+      "topic": "Kanton Zug",
+      "subtopic": "Geschichte & Beitritt",
+      "type": "multiple_choice",
+      "question": "Wann traten die Stadt Zug und das Äussere Amt dem Bund der Schweizer Eidgenossenschaft bei?",
+      "correct_answer": "27. Juni 1352",
+      "explanation": "Am 27. Juni 1352 traten die Stadt Zug und das Äussere Amt dem Bund der Eidgenossen bei.",
+      "options": [
+        "1. August 1291",
+        "27. Juni 1352",
+        "15. November 1315",
+        "12. September 1848"
+      ],
+      "difficulty": "einfach",
+      "source": {
+        "title": "Die wichtigsten Daten der Zuger und Schweizer Geschichte.pdf",
+        "year": 2026
+      }
+    },
+    {
+      "id": "KAN-ZUG-002",
+      "source_collection": "kanton",
+      "topic": "Kanton Zug",
+      "subtopic": "Regierungsrat & Exekutive",
+      "type": "multiple_choice",
+      "question": "Aus wie vielen Mitgliedern besteht der Regierungsrat (die Exekutive) des Kantons Zug?",
+      "correct_answer": "7 Mitglieder",
+      "explanation": "Der Regierungsrat des Kantons Zug ist die leitende und vollziehende Behörde des Kantons und setzt sich aus 7 Mitgliedern zusammen.",
+      "options": [
+        "5 Mitglieder",
+        "7 Mitglieder",
+        "9 Mitglieder",
+        "12 Mitglieder"
+      ],
+      "difficulty": "einfach",
+      "source": {
+        "title": "Die politischen Ebenen der Schweiz (1).pdf",
+        "year": 2026
+      }
+    },
+    {
+      "id": "KAN-ZUG-003",
+      "source_collection": "kanton",
+      "topic": "Kanton Zug",
+      "subtopic": "Kantonsrat & Legislative",
+      "type": "multiple_choice",
+      "question": "Wie viele Mitglieder hat der Zuger Kantonsrat (die Legislative des Kantons Zug)?",
+      "correct_answer": "80 Mitglieder",
+      "explanation": "Der Kantonsrat als gesetzgebende Behörde des Kantons Zug besteht aus 80 vom Volk gewählten Mitgliedern.",
+      "options": [
+        "50 Mitglieder",
+        "80 Mitglieder",
+        "100 Mitglieder",
+        "200 Mitglieder"
+      ],
+      "difficulty": "einfach",
+      "source": {
+        "title": "Staatsbürgerlicher Kurs Vortrag Teil 3 2026-04.pdf",
+        "year": 2026
+      }
+    },
+    {
+      "id": "KAN-ZUG-004",
+      "source_collection": "kanton",
+      "topic": "Kanton Zug",
+      "subtopic": "Wirtschaft & Innovation",
+      "type": "multiple_choice",
+      "question": "Welcher Name wurde der Region Zug aufgrund der Ansiedlung zahlreicher Unternehmen aus dem Bereich Blockchain und Kryptowährungen gegeben?",
+      "correct_answer": "Crypto Valley",
+      "explanation": "Durch die Häufung von Krypto- und Blockchain-Unternehmen erhielt die Region Zug die Bezeichnung «Crypto Valley».",
+      "options": [
+        "Silicon Forest",
+        "Crypto Valley",
+        "Financial Hub",
+        "Tech Basin"
+      ],
+      "difficulty": "einfach",
+      "source": {
+        "title": "Kanton Zug – Wikipedia",
+        "year": 2026
+      }
+    },
+    {
+      "id": "KAN-ZUG-005",
+      "source_collection": "kanton",
+      "topic": "Kanton Zug",
+      "subtopic": "Geschichte & Bundesräte",
+      "type": "multiple_choice",
+      "question": "Wer wurde im Jahr 1934 als erster Zuger Bürger in den Schweizer Bundesrat gewählt?",
+      "correct_answer": "Philipp Etter",
+      "explanation": "Philipp Etter aus Menzingen wurde 1934 als erster Zuger in den Bundesrat gewählt. Der zweite Zuger Bundesrat war Hans Hürlimann (1973).",
+      "options": [
+        "Hans Hürlimann",
+        "Philipp Etter",
+        "Walther Hegglin",
+        "Stefan Moos"
+      ],
+      "difficulty": "mittel",
+      "source": {
+        "title": "Die wichtigsten Daten der Zuger und Schweizer Geschichte.pdf",
+        "year": 2026
+      }
+    },
+    {
+      "id": "KAN-ZUG-006",
+      "source_collection": "kanton",
+      "topic": "Schweizer Politik",
+      "subtopic": "Bundesversammlung",
+      "type": "multiple_choice",
+      "question": "Aus welchen zwei gleichberechtigten Kammern besteht die Schweizer Bundesversammlung (das Parlament)?",
+      "correct_answer": "Nationalrat und Ständerat",
+      "explanation": "Das eidgenössische Parlament besteht aus dem 200-köpfigen Nationalrat (Volksvertretung) und dem 46-köpfigen Ständerat (Kantonsvertretung).",
+      "options": [
+        "Nationalrat und Ständerat",
+        "Bundesrat und Kantonsrat",
+        "Grosser Rat und Regierungsrat",
+        "Volksrat und Ständerat"
+      ],
+      "difficulty": "einfach",
+      "source": {
+        "title": "Der Bund kurz erklärt 2026.pdf",
+        "year": 2026
+      }
+    },
+    {
+      "id": "KAN-ZUG-007",
+      "source_collection": "kanton",
+      "topic": "Schweizer Politik",
+      "subtopic": "Ständerat",
+      "type": "multiple_choice",
+      "question": "Wie viele Sitze hat der Kanton Zug im Schweizer Ständerat?",
+      "correct_answer": "2 Sitze",
+      "explanation": "Als Vollkanton stellt der Kanton Zug zwei Abgeordnete im 46-köpfigen Ständerat der Schweiz.",
+      "options": [
+        "1 Sitz",
+        "2 Sitze",
+        "3 Sitze",
+        "4 Sitze"
+      ],
+      "difficulty": "einfach",
+      "source": {
+        "title": "Kanton Zug – Wikipedia",
+        "year": 2026
+      }
+    },
+    {
+      "id": "KAN-ZUG-008",
+      "source_collection": "kanton",
+      "topic": "Schweizer Politik",
+      "subtopic": "Bundesrat",
+      "type": "multiple_choice",
+      "question": "Wie heisst die oberste leitende und vollziehende Behörde (Exekutive) der Schweizerischen Eidgenossenschaft?",
+      "correct_answer": "Der Bundesrat",
+      "explanation": "Der Bundesrat ist die oberste leitende und vollziehende Behörde des Bundes und besteht aus sieben gleichberechtigten Mitgliedern.",
+      "options": [
+        "Der Bundesrat",
+        "Der Nationalrat",
+        "Das Bundesgericht",
+        "Die Bundesversammlung"
+      ],
+      "difficulty": "einfach",
+      "source": {
+        "title": "Der Bund kurz erklärt 2026.pdf",
+        "year": 2026
+      }
+    },
+    {
+      "id": "KAN-ZUG-009",
+      "source_collection": "kanton",
+      "topic": "Schweizer Politik",
+      "subtopic": "Föderalismus & Subsidiarität",
+      "type": "multiple_choice",
+      "question": "Was besagt das Subsidiaritätsprinzip im politischen System der Schweiz?",
+      "correct_answer": "Aufgaben sollen von der untersten staatlichen Ebene ausgeführt werden; erst wenn diese überfordert ist, greift die nächsthöhere Ebene ein.",
+      "explanation": "Nach dem Subsidiaritätsprinzip soll die nächsthöhere staatliche Ebene nur jene Aufgaben übernehmen, welche die untere Ebene nicht selbst bewältigen kann.",
+      "options": [
+        "Aufgaben sollen von der untersten staatlichen Ebene ausgeführt werden; erst wenn diese überfordert ist, greift die nächsthöhere Ebene ein.",
+        "Der Bund bestimmt zentral über alle Angelegenheiten der Gemeinden und Kantone.",
+        "Der Kanton muss sämtliche Gesetzesentwürfe direkt beim Bundesgericht einreichen.",
+        "Die Gemeinden sind verpflichtet, ihre Steuersätze an den Bund abzutreten."
+      ],
+      "difficulty": "anspruchsvoll",
+      "source": {
+        "title": "Staatsbürgerlicher Kurs Vortrag Teil 1 2026-04.pdf",
+        "year": 2026
+      }
+    },
+    {
+      "id": "KAN-ZUG-010",
+      "source_collection": "kanton",
+      "topic": "Schweizer Politik",
+      "subtopic": "Gewaltentrennung",
+      "type": "multiple_choice",
+      "question": "Welche drei Staatsgewalten bilden die Grundlage der Schweizer Demokratie?",
+      "correct_answer": "Legislative (Gesetzgebung), Exekutive (Ausführung) und Judikative (Rechtsprechung)",
+      "explanation": "Die Gewaltentrennung teilt die Staatsmacht auf in Gesetzgebung (Legislative), Vollziehung/Regierung (Exekutive) und Gerichte (Judikative).",
+      "options": [
+        "Legislative (Gesetzgebung), Exekutive (Ausführung) und Judikative (Rechtsprechung)",
+        "Föderalismus, Subsidiarität und Konkordanz",
+        "Nationalrat, Ständerat und Bundesversammlung",
+        "Gemeinderat, Bürgerrat und Kirchenrat"
+      ],
+      "difficulty": "mittel",
+      "source": {
+        "title": "Die politischen Ebenen der Schweiz (1).pdf",
+        "year": 2026
+      }
+    },
+    {
+      "id": "KAN-ZUG-011",
+      "source_collection": "kanton",
+      "topic": "Geografie",
+      "subtopic": "Gemeinden im Kanton Zug",
+      "type": "multiple_choice",
+      "question": "Wie viele Einwohnergemeinden umfasst der Kanton Zug?",
+      "correct_answer": "11 Einwohnergemeinden",
+      "explanation": "Der Kanton Zug gliedert sich in insgesamt 11 Einwohnergemeinden.",
+      "options": [
+        "8 Einwohnergemeinden",
+        "10 Einwohnergemeinden",
+        "11 Einwohnergemeinden",
+        "14 Einwohnergemeinden"
+      ],
+      "difficulty": "einfach",
+      "source": {
+        "title": "Kanton Zug – Wikipedia",
+        "year": 2026
+      }
+    },
+    {
+      "id": "KAN-ZUG-012",
+      "source_collection": "kanton",
+      "topic": "Geografie",
+      "subtopic": "Gewässer & Flüsse",
+      "type": "multiple_choice",
+      "question": "Wie heisst der Hauptfluss des Kantons Zug, der dem Ägerisee entspringt und in den Zugersee mündet?",
+      "correct_answer": "Die Lorze",
+      "explanation": "Die Lorze entspringt dem Ägerisee, fliesst durch das Lorzental und mündet zwischen Zug und Cham in den Zugersee.",
+      "options": [
+        "Die Reuss",
+        "Die Sihl",
+        "Die Lorze",
+        "Der Aare"
+      ],
+      "difficulty": "einfach",
+      "source": {
+        "title": "Kanton Zug – Wikipedia",
+        "year": 2026
+      }
+    },
+    {
+      "id": "KAN-ZUG-013",
+      "source_collection": "kanton",
+      "topic": "Geografie",
+      "subtopic": "Nachbarkantone",
+      "type": "multiple_choice",
+      "question": "Welche vier Kantone grenzen direkt an den Kanton Zug?",
+      "correct_answer": "Zürich, Schwyz, Luzern und Aargau",
+      "explanation": "Der Kanton Zug liegt in der Zentralschweiz und grenzt an die Nachbarkantone Zürich, Schwyz, Luzern und Aargau.",
+      "options": [
+        "Zürich, Schwyz, Luzern und Aargau",
+        "Zürich, Uri, Obwalden und Nidwalden",
+        "Bern, Solothurn, Basel und Aargau",
+        "Schwyz, Glarus, St. Gallen und Thurgau"
+      ],
+      "difficulty": "einfach",
+      "source": {
+        "title": "Kanton Zug – Wikipedia",
+        "year": 2026
+      }
+    },
+    {
+      "id": "KAN-ZUG-014",
+      "source_collection": "kanton",
+      "topic": "Geografie",
+      "subtopic": "Berge & Höchster Punkt",
+      "type": "multiple_choice",
+      "question": "Welcher Berg bildet an der Grenze zum Kanton Schwyz mit 1582 m ü. M. den höchsten Punkt des Kantons Zug?",
+      "correct_answer": "Der Rossberg",
+      "explanation": "Der Rossberg ist mit 1582 m ü. M. die höchste Erhebung im Kanton Zug.",
+      "options": [
+        "Der Zugerberg",
+        "Der Rossberg",
+        "Der Gubel",
+        "Der Rigi"
+      ],
+      "difficulty": "mittel",
+      "source": {
+        "title": "Kanton Zug – Wikipedia",
+        "year": 2026
+      }
+    },
+    {
+      "id": "KAN-ZUG-015",
+      "source_collection": "kanton",
+      "topic": "Geografie",
+      "subtopic": "Infrastruktur & Transport",
+      "type": "multiple_choice",
+      "question": "Wie heisst die einzige Standseilbahn bzw. Bergbahn im Kanton Zug?",
+      "correct_answer": "Zugerbergbahn (ZBB)",
+      "explanation": "Die Zugerbergbahn (ZBB) ist die einzige Standseilbahn im Kanton Zug und verbindet die Stadt Zug mit dem Zugerberg.",
+      "options": [
+        "Rigi-Bahnen",
+        "Zugerbergbahn (ZBB)",
+        "Morgartenbahn",
+        "Lorzentalbahn"
+      ],
+      "difficulty": "einfach",
+      "source": {
+        "title": "Kanton Zug – Wikipedia",
+        "year": 2026
+      }
+    },
+    {
+      "id": "KAN-ZUG-016",
+      "source_collection": "kanton",
+      "topic": "Rechte und Pflichten",
+      "subtopic": "Stimm- und Wahlrecht",
+      "type": "multiple_choice",
+      "question": "Ab welchem Alter erhalten Schweizer Bürgerinnen und Bürger das aktive und passive Stimm- und Wahlrecht auf Bundesebene?",
+      "correct_answer": "Ab dem 18. Altersjahr",
+      "explanation": "Das Stimm- und Wahlrecht steht allen mündigen Schweizerinnen und Schweizern ab dem vollendeten 18. Altersjahr zu.",
+      "options": [
+        "Ab dem 16. Altersjahr",
+        "Ab dem 18. Altersjahr",
+        "Ab dem 20. Altersjahr",
+        "Ab dem 21. Altersjahr"
+      ],
+      "difficulty": "einfach",
+      "source": {
+        "title": "ABC der polititschen Rechte und Pflichten.pdf",
+        "year": 2026
+      }
+    },
+    {
+      "id": "KAN-ZUG-017",
+      "source_collection": "kanton",
+      "topic": "Rechte und Pflichten",
+      "subtopic": "Volksinitiative",
+      "type": "multiple_choice",
+      "question": "Wie viele Unterschriften müssen für das Zustandekommen einer eidgenössischen Volksinitiative innerhalb welcher Frist gesammelt werden?",
+      "correct_answer": "100'000 Unterschriften in 18 Monaten",
+      "explanation": "Für eine Volksinitiative zur Änderung der Bundesverfassung sind mindestens 100'000 gültige Unterschriften von Stimmberechtigten innert 18 Monaten einzureichen.",
+      "options": [
+        "50'000 Unterschriften in 100 Tagen",
+        "100'000 Unterschriften in 18 Monaten",
+        "100'000 Unterschriften in 12 Monaten",
+        "200'000 Unterschriften in 24 Monaten"
+      ],
+      "difficulty": "mittel",
+      "source": {
+        "title": "Der Bund kurz erklärt 2026.pdf",
+        "year": 2026
+      }
+    },
+    {
+      "id": "KAN-ZUG-018",
+      "source_collection": "kanton",
+      "topic": "Rechte und Pflichten",
+      "subtopic": "Referendum",
+      "type": "multiple_choice",
+      "question": "Wie viele Unterschriften sind für ein fakultatives Volksreferendum gegen ein beschlossenes Bundesgesetz erforderlich und wie lang ist die Sammelfrist?",
+      "correct_answer": "50'000 Unterschriften in 100 Tagen",
+      "explanation": "Damit über ein vom Parlament verabschiedetes Gesetz vom Volk abgestimmt wird, verlangt das fakultative Referendum 50'000 Unterschriften innert 100 Tagen.",
+      "options": [
+        "50'000 Unterschriften in 100 Tagen",
+        "50'000 Unterschriften in 6 Monaten",
+        "100'000 Unterschriften in 100 Tagen",
+        "80'000 Unterschriften in 18 Monaten"
+      ],
+      "difficulty": "mittel",
+      "source": {
+        "title": "Der Bund kurz erklärt 2026.pdf",
+        "year": 2026
+      }
+    },
+    {
+      "id": "KAN-ZUG-019",
+      "source_collection": "kanton",
+      "topic": "Rechte und Pflichten",
+      "subtopic": "Wohnsitzerfordernis Einbürgerung",
+      "type": "multiple_choice",
+      "question": "Welche Mindestwohnsitzfristen gelten im Kanton Zug und in der Wohngemeinde für eine ordentliche Einbürgerung?",
+      "correct_answer": "Mindestens 5 Jahre im Kanton Zug und ununterbrochen 3 Jahre in der Wohngemeinde",
+      "explanation": "Für eine ordentliche Einbürgerung im Kanton Zug müssen Gesuchstellende mindestens 5 Jahre im Kanton gewohnt haben sowie die letzten 3 Jahre ununterbrochen in der Einbürgerungsgemeinde.",
+      "options": [
+        "Mindestens 2 Jahre im Kanton Zug und 1 Jahr in der Wohngemeinde",
+        "Mindestens 5 Jahre im Kanton Zug und ununterbrochen 3 Jahre in der Wohngemeinde",
+        "Mindestens 10 Jahre im Kanton Zug und 5 Jahre in der Wohngemeinde",
+        "Mindestens 8 Jahre im Kanton Zug ohne Gemeindewohnsitzpflicht"
+      ],
+      "difficulty": "anspruchsvoll",
+      "source": {
+        "title": "Ordentliche Einbürgerung",
+        "year": 2026
+      }
+    },
+    {
+      "id": "KAN-ZUG-020",
+      "source_collection": "kanton",
+      "topic": "Rechte und Pflichten",
+      "subtopic": "Gemeindebehörde Zug",
+      "type": "multiple_choice",
+      "question": "Wie heisst das 40-köpfige Gemeindeparlament der Einwohnergemeinde Stadt Zug?",
+      "correct_answer": "Grosser Gemeinderat",
+      "explanation": "Die Stadt Zug hat als einzige Zuger Einwohnergemeinde ein Parlament anstelle der Gemeindeversammlung, nämlich den Grossen Gemeinderat mit 40 Mitgliedern.",
+      "options": [
+        "Grosser Gemeinderat",
+        "Kantonsrat",
+        "Stadtrat",
+        "Einwohnerversammlung"
+      ],
+      "difficulty": "mittel",
+      "source": {
+        "title": "Staatsbürgerlicher Kurs Vortrag Teil 3 2026-04.pdf",
+        "year": 2026
+      }
+    }
+  ]
+}
