@@ -91,6 +91,7 @@ class App {
   constructor() {
     this.db = new LearningDB();
     this.questions = [];
+    this.flashcardQuestions = [];
     this.progressMap = new Map();
     this.currentFCIndex = 0;
     this.activeQuiz = null;
@@ -180,7 +181,7 @@ class App {
   }
 
   async rateFlashcard(quality) {
-    const q = this.questions[this.currentFCIndex];
+    const q = this.flashcardQuestions[this.currentFCIndex];
     if (!q) return;
 
     const existing = this.progressMap.get(q.id) || {
@@ -202,22 +203,45 @@ class App {
 
     // Reset card flip & show next card
     document.getElementById('cardInner').classList.remove('flipped');
-    this.currentFCIndex = (this.currentFCIndex + 1) % this.questions.length;
+    this.currentFCIndex = (this.currentFCIndex + 1) % this.flashcardQuestions.length;
     setTimeout(() => this.displayCurrentFlashcard(), 300);
   }
 
   // --- FLASHCARD MODE ---
-  loadFlashcards() {
-    if (this.questions.length === 0) return;
-    this.currentFCIndex = 0;
-    this.displayCurrentFlashcard();
+
+loadFlashcards() {
+  this.flashcardQuestions = this.questions.filter(
+    q => q.type === 'flashcard'
+  );
+
+  this.currentFCIndex = 0;
+
+  if (this.flashcardQuestions.length === 0) {
+    document.getElementById('flashcardCounter').textContent = '0 / 0';
+    document.getElementById('fcTopicFront').textContent = '';
+    document.getElementById('fcDiffFront').textContent = '';
+    document.getElementById('fcQuestionFront').textContent =
+      'Keine Karteikarten vorhanden.';
+    document.getElementById('fcTopicBack').textContent = '';
+    document.getElementById('fcAnswerBack').textContent = '';
+    document.getElementById('fcExplanationBack').textContent = '';
+    document.getElementById('fcSourceBack').textContent = '';
+    document.getElementById('fcRatingButtons').classList.add('hidden');
+    document.getElementById('cardInner').classList.remove('flipped');
+    return;
   }
 
+  document.getElementById('fcRatingButtons').classList.remove('hidden');
+  document.getElementById('cardInner').classList.remove('flipped');
+  this.displayCurrentFlashcard();
+}
+
+
   displayCurrentFlashcard() {
-    const q = this.questions[this.currentFCIndex];
+    const q = this.flashcardQuestions[this.currentFCIndex];
     if (!q) return;
 
-    document.getElementById('flashcardCounter').textContent = `${this.currentFCIndex + 1} / ${this.questions.length}`;
+    document.getElementById('flashcardCounter').textContent = `${this.currentFCIndex + 1} / ${this.flashcardQuestions.length}`;
     document.getElementById('fcTopicFront').textContent = q.topic;
     document.getElementById('fcDiffFront').textContent = q.difficulty || 'Mittel';
     document.getElementById('fcQuestionFront').textContent = q.question;
