@@ -84,6 +84,8 @@ async saveProgress(progressObj) {
   });
 }
 
+} // Closes the LearningDB class
+  
 // App Core Controller
 class App {
   constructor() {
