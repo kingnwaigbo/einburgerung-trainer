@@ -158,6 +158,12 @@ class App {
     this.flashcardQuestions = [];
     this.progressMap = new Map();
     this.currentFCIndex = 0;
+    this.interviewQuestions = [];
+    this.currentInterviewIndex = 0;
+    this.interviewRecognition = null;
+    this.interviewTranscript = '';
+    this.interviewTimerInterval = null;
+    this.interviewStartedAt = null;
     this.activeQuiz = null;
     this.walkingIndex = 0;
     this.speechSynth = window.speechSynthesis;
@@ -207,7 +213,178 @@ class App {
 
     if (screenId === 'flashcards') this.loadFlashcards();
     if (screenId === 'interview') this.loadInterviewQuestion();
+    if (screenId !== 'interview') this.stopInterviewTimer();
     if (screenId === 'dashboard') this.updateDashboard();
+  }
+
+  loadInterviewQuestion() {
+    if (this.interviewRecognition && this.isRecording) {
+      this.interviewRecognition.stop();
+    }
+
+    this.interviewQuestions = this.questions.filter(q => q.type === 'interview');
+    if (this.interviewQuestions.length === 0) {
+      this.interviewQuestions = this.questions;
+    }
+
+    if (this.interviewQuestions.length === 0) {
+      document.getElementById('intQuestionText').textContent = 'Keine Interviewfragen vorhanden.';
+      document.getElementById('intSubtopic').textContent = '';
+      document.getElementById('intMicBtn').disabled = true;
+      document.querySelectorAll('#screen-interview button[onclick^="app.rateInterview"]').forEach(button => { button.disabled = true; });
+      return;
+    }
+
+    this.interviewQuestions.sort((a, b) => {
+      const aProgress = this.progressMap.get(a.id);
+      const bProgress = this.progressMap.get(b.id);
+      if (!aProgress?.interviewRatedAt) return bProgress?.interviewRatedAt ? -1 : 0;
+      if (!bProgress?.interviewRatedAt) return 1;
+      return new Date(aProgress.interviewRatedAt) - new Date(bProgress.interviewRatedAt);
+    });
+    this.currentInterviewIndex = 0;
+    this.displayInterviewQuestion();
+  }
+
+  displayInterviewQuestion() {
+    const q = this.interviewQuestions[this.currentInterviewIndex];
+    if (!q) return;
+
+    this.interviewTranscript = '';
+    this.interviewStartedAt = Date.now();
+    document.getElementById('intSubtopic').textContent = q.subtopic || q.topic || 'Interview';
+    document.getElementById('intQuestionText').textContent = q.question;
+    document.getElementById('intSpeechTranscript').textContent = 'Sprechen Sie jetzt...';
+    document.getElementById('intSpeechOutput').classList.add('hidden');
+    document.getElementById('intModelAnswerBox').classList.add('hidden');
+    this.startInterviewTimer();
+
+    const savedRating = this.progressMap.get(q.id)?.interviewRating;
+    document.querySelectorAll('#screen-interview button[onclick^="app.rateInterview"]').forEach(button => {
+      button.disabled = false;
+      button.classList.toggle('ring-2', Number(button.getAttribute('onclick').match(/\d+/)?.[0]) === savedRating);
+    });
+  }
+
+  startInterviewTimer() {
+    this.stopInterviewTimer();
+    const updateTimer = () => {
+      const elapsedSeconds = Math.floor((Date.now() - this.interviewStartedAt) / 1000);
+      const minutes = String(Math.floor(elapsedSeconds / 60)).padStart(2, '0');
+      const seconds = String(elapsedSeconds % 60).padStart(2, '0');
+      document.getElementById('intTimer').textContent = `⏱️ ${minutes}:${seconds}`;
+    };
+    updateTimer();
+    this.interviewTimerInterval = setInterval(updateTimer, 1000);
+  }
+
+  stopInterviewTimer() {
+    if (this.interviewTimerInterval) {
+      clearInterval(this.interviewTimerInterval);
+      this.interviewTimerInterval = null;
+    }
+  }
+
+  toggleModelAnswer() {
+    const q = this.interviewQuestions[this.currentInterviewIndex];
+    if (!q) return;
+
+    const answerBox = document.getElementById('intModelAnswerBox');
+    const isHidden = answerBox.classList.toggle('hidden');
+    if (isHidden) return;
+
+    document.getElementById('intModelAnswer').textContent = q.correct_answer || 'Keine Musterantwort hinterlegt.';
+    const keyPoints = document.getElementById('intKeyPoints');
+    keyPoints.innerHTML = '';
+    const points = (q.explanation || q.correct_answer || '').split(/(?<=[.!?])\s+|;\s+/).filter(Boolean);
+    points.forEach(point => {
+      const item = document.createElement('li');
+      item.textContent = point;
+      keyPoints.appendChild(item);
+    });
+  }
+
+  toggleInterviewMic() {
+    if (this.isRecording) {
+      this.interviewRecognition.stop();
+      return;
+    }
+
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SpeechRecognition) {
+      alert('Spracherkennung wird von diesem Browser nicht unterstützt. Sie können Ihre Antwort trotzdem selbst bewerten.');
+      return;
+    }
+
+    const recognition = new SpeechRecognition();
+    this.interviewRecognition = recognition;
+    recognition.lang = 'de-CH';
+    recognition.continuous = true;
+    recognition.interimResults = true;
+    recognition.onstart = () => {
+      this.isRecording = true;
+      document.getElementById('intMicText').textContent = 'Aufnahme stoppen';
+      document.getElementById('intSpeechOutput').classList.remove('hidden');
+      document.getElementById('intSpeechTranscript').textContent = 'Sprechen Sie jetzt...';
+    };
+    recognition.onresult = event => {
+      let interimTranscript = '';
+      for (let i = event.resultIndex; i < event.results.length; i += 1) {
+        const transcript = event.results[i][0].transcript.trim();
+        if (event.results[i].isFinal) this.interviewTranscript += `${transcript} `;
+        else interimTranscript += `${transcript} `;
+      }
+      document.getElementById('intSpeechTranscript').textContent =
+        `${this.interviewTranscript}${interimTranscript}`.trim() || 'Sprechen Sie jetzt...';
+    };
+    recognition.onerror = event => {
+      this.isRecording = false;
+      document.getElementById('intMicText').textContent = 'Antwort Aufnehmen';
+      if (event.error !== 'no-speech' && event.error !== 'aborted') {
+        document.getElementById('intSpeechOutput').classList.remove('hidden');
+        document.getElementById('intSpeechTranscript').textContent = `Aufnahmefehler: ${event.error}`;
+      }
+    };
+    recognition.onend = () => {
+      this.isRecording = false;
+      document.getElementById('intMicText').textContent = 'Antwort Aufnehmen';
+    };
+
+    try {
+      recognition.start();
+    } catch (error) {
+      this.isRecording = false;
+      alert(`Aufnahme konnte nicht gestartet werden: ${error.message}`);
+    }
+  }
+
+  async rateInterview(rating) {
+    const q = this.interviewQuestions[this.currentInterviewIndex];
+    if (!q || ![1, 2, 3].includes(rating)) return;
+
+    const existing = this.progressMap.get(q.id) || { id: q.id };
+    const updatedProgress = {
+      ...existing,
+      interviewRating: rating,
+      interviewRatedAt: new Date().toISOString(),
+      interviewTranscript: this.interviewTranscript.trim(),
+      interviewDurationSeconds: Math.floor((Date.now() - this.interviewStartedAt) / 1000)
+    };
+    const ratingButtons = document.querySelectorAll('#screen-interview button[onclick^="app.rateInterview"]');
+    ratingButtons.forEach(button => { button.disabled = true; });
+
+    try {
+      await this.db.saveProgress(updatedProgress);
+    } catch (error) {
+      ratingButtons.forEach(button => { button.disabled = false; });
+      alert(error.message);
+      return;
+    }
+
+    this.progressMap.set(q.id, updatedProgress);
+    if (this.interviewRecognition && this.isRecording) this.interviewRecognition.stop();
+    this.currentInterviewIndex = (this.currentInterviewIndex + 1) % this.interviewQuestions.length;
+    this.displayInterviewQuestion();
   }
 
   startSmartSession() {
