@@ -288,6 +288,8 @@ loadFlashcards() {
 
   renderQuizQuestion() {
     const q = this.activeQuiz.questions[this.activeQuiz.currentIndex];
+    this.activeQuiz.answered = false;
+    this.activeQuiz.answerPending = false;
     document.getElementById('quizFeedbackBox').classList.add('hidden');
     document.getElementById('quizProgressText').textContent = `Frage ${this.activeQuiz.currentIndex + 1} von ${this.activeQuiz.questions.length}`;
     document.getElementById('quizScoreText').textContent = `Punkte: ${this.activeQuiz.score}`;
@@ -296,6 +298,14 @@ loadFlashcards() {
 
     const container = document.getElementById('quizOptionsContainer');
     container.innerHTML = '';
+
+    const savedAnswer = this.progressMap.get(q.id)?.lastQuizAnswer;
+    if (savedAnswer) {
+      const savedAnswerText = document.createElement('p');
+      savedAnswerText.className = 'text-xs text-slate-500 dark:text-slate-400 mb-2';
+      savedAnswerText.textContent = `Zuletzt gespeichert: ${savedAnswer.selected} (${savedAnswer.isCorrect ? 'richtig' : 'nicht richtig'})`;
+      container.appendChild(savedAnswerText);
+    }
 
     const opts = [...q.options].sort(() => Math.random() - 0.5);
     opts.forEach(opt => {
@@ -307,8 +317,35 @@ loadFlashcards() {
     });
   }
 
-  handleQuizAnswer(selected, correct, q) {
+  async handleQuizAnswer(selected, correct, q) {
+    if (this.activeQuiz.answered || this.activeQuiz.answerPending) return;
+
     const isCorrect = selected === correct;
+    this.activeQuiz.answerPending = true;
+    const optionButtons = document.querySelectorAll('#quizOptionsContainer button');
+    optionButtons.forEach(button => { button.disabled = true; });
+
+    const updatedProgress = {
+      ...(this.progressMap.get(q.id) || { id: q.id }),
+      lastQuizAnswer: {
+        selected,
+        isCorrect,
+        answeredAt: new Date().toISOString()
+      }
+    };
+
+    try {
+      await this.db.saveProgress(updatedProgress);
+    } catch (error) {
+      this.activeQuiz.answerPending = false;
+      optionButtons.forEach(button => { button.disabled = false; });
+      alert(`Antwort konnte nicht gespeichert werden: ${error.message}`);
+      return;
+    }
+
+    this.progressMap.set(q.id, updatedProgress);
+    this.activeQuiz.answered = true;
+    this.activeQuiz.answerPending = false;
     if (isCorrect) this.activeQuiz.score += 1;
 
     const box = document.getElementById('quizFeedbackBox');
