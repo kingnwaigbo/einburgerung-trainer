@@ -6,6 +6,6 @@ The manifest ID is `/einburgerung-trainer/`. The manifest is named `manifest.web
 
 After GitHub Pages updates, open https://kingnwaigbo.github.io/einburgerung-trainer/ in Chrome on Android, then use the browser menu > Install app (if available).
 
-Do not clear Chrome site storage if you want to retain IndexedDB learning progress. Existing users may need to import the new flashcards because `questions.json` is loaded only when the local database is empty.
+Do not clear Chrome site storage if you want to retain learning progress. Progress is stored in IndexedDB and mirrored in local storage. Existing users may need to import the new flashcards because `questions.json` is loaded only when the local database is empty.
 
 The bundled 66 additional flashcards were structurally normalized but have NOT been independently fact-checked.

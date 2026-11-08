@@ -6,6 +6,7 @@
 // IndexedDB Storage Layer
 const DB_NAME = 'EinbuergerungChamDB';
 const DB_VERSION = 1;
+const PROGRESS_STORAGE_KEY = 'einbuergerungProgress';
 
 class LearningDB {
   constructor() {
@@ -65,24 +66,87 @@ async saveQuestions(questions) {
   }
 
   async getAllProgress() {
-    return new Promise((resolve) => {
+    let localProgress = [];
+    try {
+      localProgress = JSON.parse(localStorage.getItem(PROGRESS_STORAGE_KEY) || '[]');
+      if (!Array.isArray(localProgress)) {
+        throw new Error('Gespeicherter Lernfortschritt hat ein ungültiges Format.');
+      }
+    } catch (error) {
+      console.warn(`Lokaler Lernfortschritt konnte nicht geladen werden: ${error.message}`);
+      localProgress = [];
+    }
+
+    return new Promise((resolve, reject) => {
       const tx = this.db.transaction('user_progress', 'readonly');
       const req = tx.objectStore('user_progress').getAll();
-      req.onsuccess = () => resolve(req.result || []);
+      req.onsuccess = () => {
+        const progressById = new Map((req.result || []).map(progress => [progress.id, progress]));
+        localProgress.forEach(progress => {
+          const stored = progressById.get(progress.id);
+          if (!stored) {
+            progressById.set(progress.id, progress);
+            return;
+          }
+
+          const merged = { ...stored, ...progress };
+          if (new Date(stored.lastReviewed || 0) > new Date(progress.lastReviewed || 0)) {
+            ['repetitions', 'interval', 'easinessFactor', 'dueDate', 'lastReviewed'].forEach(key => {
+              if (stored[key] !== undefined) merged[key] = stored[key];
+            });
+          }
+          if (new Date(stored.lastQuizAnswer?.answeredAt || 0) > new Date(progress.lastQuizAnswer?.answeredAt || 0)) {
+            merged.lastQuizAnswer = stored.lastQuizAnswer;
+          }
+          progressById.set(progress.id, merged);
+        });
+        const progress = Array.from(progressById.values());
+        try {
+          localStorage.setItem(PROGRESS_STORAGE_KEY, JSON.stringify(progress));
+        } catch (error) {
+          console.warn(`Lernfortschritt konnte nicht gespiegelt werden: ${error.message}`);
+        }
+        resolve(progress);
+      };
+      req.onerror = () => {
+        if (localProgress.length > 0) resolve(localProgress);
+        else reject(req.error || tx.error);
+      };
     });
   }
 
-async saveProgress(progressObj) {
-  return new Promise((resolve, reject) => {
-    const tx = this.db.transaction('user_progress', 'readwrite');
+  async saveProgress(progressObj) {
+    const errors = [];
+    let localSaved = false;
+    let databaseSaved = false;
+    try {
+      const progress = JSON.parse(localStorage.getItem(PROGRESS_STORAGE_KEY) || '[]');
+      const progressById = new Map(progress.map(item => [item.id, item]));
+      progressById.set(progressObj.id, progressObj);
+      localStorage.setItem(PROGRESS_STORAGE_KEY, JSON.stringify(Array.from(progressById.values())));
+      localSaved = true;
+    } catch (error) {
+      errors.push(error);
+    }
 
-    tx.oncomplete = () => resolve();
-    tx.onerror = () => reject(tx.error);
-    tx.onabort = () => reject(tx.error);
+    try {
+      await new Promise((resolve, reject) => {
+        const tx = this.db.transaction('user_progress', 'readwrite');
+        tx.oncomplete = () => resolve();
+        tx.onerror = () => reject(tx.error);
+        tx.onabort = () => reject(tx.error);
 
-    tx.objectStore('user_progress').put(progressObj);
-  });
-}
+        tx.objectStore('user_progress').put(progressObj);
+      });
+      databaseSaved = true;
+    } catch (error) {
+      errors.push(error);
+    }
+
+    if (!localSaved && !databaseSaved) {
+      throw new Error(`Lernfortschritt konnte nicht gespeichert werden: ${errors.map(error => error.message).join('; ')}`);
+    }
+  }
 
 } // Closes the LearningDB class
   
@@ -146,6 +210,38 @@ class App {
     if (screenId === 'dashboard') this.updateDashboard();
   }
 
+  startSmartSession() {
+    const flashcards = this.questions.filter(q => q.type === 'flashcard');
+    if (flashcards.length > 0) {
+      const now = Date.now();
+      const dueCards = flashcards.filter(q => {
+        const progress = this.progressMap.get(q.id);
+        return !progress || !progress.dueDate || new Date(progress.dueDate).getTime() <= now;
+      });
+      const sessionCards = dueCards.length > 0
+        ? dueCards
+        : flashcards.sort((a, b) => {
+            const aDue = new Date(this.progressMap.get(a.id)?.dueDate || 0).getTime();
+            const bDue = new Date(this.progressMap.get(b.id)?.dueDate || 0).getTime();
+            return aDue - bDue;
+          });
+
+      this.showScreen('flashcards');
+      this.flashcardQuestions = sessionCards;
+      this.currentFCIndex = 0;
+      this.displayCurrentFlashcard();
+      return;
+    }
+
+    if (this.questions.some(q => q.type === 'multiple_choice' || q.options)) {
+      this.showScreen('quiz');
+      this.startQuiz();
+      return;
+    }
+
+    alert('Keine Fragen für eine Smart-Session vorhanden.');
+  }
+
   toggleDarkMode() {
     document.documentElement.classList.toggle('dark');
   }
@@ -198,8 +294,13 @@ class App {
       lastReviewed: new Date().toISOString()
     };
 
+    try {
+      await this.db.saveProgress(updated);
+    } catch (error) {
+      alert(error.message);
+      return;
+    }
     this.progressMap.set(q.id, updated);
-    await this.db.saveProgress(updated);
 
     // Reset card flip & show next card
     document.getElementById('cardInner').classList.remove('flipped');
@@ -465,11 +566,21 @@ loadFlashcards() {
 
   async resetProgress() {
     if (confirm('Möchten Sie wirklich den gesamten Lernfortschritt löschen?')) {
-      const tx = this.db.db.transaction('user_progress', 'readwrite');
-      tx.objectStore('user_progress').clear();
-      this.progressMap.clear();
-      this.updateDashboard();
-      alert('Fortschritt zurückgesetzt.');
+      try {
+        await new Promise((resolve, reject) => {
+          const tx = this.db.db.transaction('user_progress', 'readwrite');
+          tx.oncomplete = () => resolve();
+          tx.onerror = () => reject(tx.error);
+          tx.onabort = () => reject(tx.error);
+          tx.objectStore('user_progress').clear();
+        });
+        localStorage.removeItem(PROGRESS_STORAGE_KEY);
+        this.progressMap.clear();
+        this.updateDashboard();
+        alert('Fortschritt zurückgesetzt.');
+      } catch (error) {
+        alert(`Fortschritt konnte nicht zurückgesetzt werden: ${error.message}`);
+      }
     }
   }
 }
