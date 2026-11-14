@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Learning queue regression tests</title>
+<h1>Learning queue regression tests</h1>
+<ol id="results"></ol>
+<main>
+  <section id="screen-dashboard" class="hidden"></section>
+  <section id="screen-flashcards" class="hidden"></section>
+</main>
+<span id="flashcardCounter"></span>
+<span id="fcTopicFront"></span>
+<span id="fcDiffFront"></span>
+<span id="fcQuestionFront"></span>
+<span id="fcTopicBack"></span>
+<span id="fcAnswerBack"></span>
+<span id="fcExplanationBack"></span>
+<span id="fcSourceBack"></span>
+<div id="fcRatingButtons"><button></button></div>
+<div id="cardInner"></div>
+<script src="../learning-queue.js"></script>
+<script src="../app.js"></script>
+<script>
+  window.onload = null;
+  const results = document.getElementById('results');
+  const now = Date.parse('2030-01-15T12:00:00.000Z');
+
+  class MemoryStorage {
+    constructor() {
+      this.values = new Map([['einbuergerungProgress', 'preserve']]);
+    }
+
+    getItem(key) {
+      return this.values.get(key) || null;
+    }
+
+    setItem(key, value) {
+      this.values.set(key, value);
+    }
+  }
+
+  function assert(condition, message) {
+    if (!condition) throw new Error(message);
+  }
+
+  function questions(entries) {
+    return entries.map(([id, topic]) => ({
+      id,
+      topic,
+      type: 'flashcard',
+      question: `Question ${id}`,
+      correct_answer: `Answer ${id}`,
+      source: { title: 'Test source', year: 2030 }
+    }));
+  }
+
+  async function run(name, callback) {
+    const item = document.createElement('li');
+    try {
+      await callback();
+      item.textContent = `PASS: ${name}`;
+    } catch (error) {
+      item.textContent = `FAIL: ${name} - ${error.message}`;
+      item.style.color = 'red';
+    }
+    results.appendChild(item);
+  }
+
+  (async () => {
+  await run('due SM-2 reviews come first and unseen cards mix topics', () => {
+    const cards = questions([
+      ['due-later', 'Due'],
+      ['topic-a-1', 'A'],
+      ['due-first', 'Due'],
+      ['topic-b-1', 'B'],
+      ['topic-a-2', 'A'],
+      ['topic-c-1', 'C']
+    ]);
+    const progress = new Map([
+      ['due-later', { dueDate: new Date(now - 1000).toISOString() }],
+      ['due-first', { dueDate: new Date(now - 10000).toISOString() }]
+    ]);
+    const state = new LearningQueue(new MemoryStorage(), () => 0.37).startNew(cards, progress, now);
+    assert(state.pendingQuestionIds[0] === 'due-first', 'oldest due review was not first');
+    assert(state.pendingQuestionIds[1] === 'due-later', 'second due review was not prioritized');
+    const topics = state.pendingQuestionIds.slice(2).map(id => cards.find(card => card.id === id).topic);
+    assert(topics[0] !== topics[1] && topics[1] !== topics[2], 'unseen topics were not interleaved');
+
+    const sameDueDate = new Map([
+      ['due-a', { dueDate: new Date(now - 1000).toISOString() }],
+      ['due-b', { dueDate: new Date(now - 1000).toISOString() }]
+    ]);
+    const tiedCards = questions([['due-a', 'Due'], ['due-b', 'Due']]);
+    const firstOrder = new LearningQueue(new MemoryStorage(), () => 0).startNew(tiedCards, sameDueDate, now);
+    const secondOrder = new LearningQueue(new MemoryStorage(), () => 0.99).startNew(tiedCards, sameDueDate, now);
+    assert(firstOrder.pendingQuestionIds[0] !== secondOrder.pendingQuestionIds[0], 'tied reviews used fixed order');
+  });
+
+  await run('reopening resumes the exact next card', () => {
+    const storage = new MemoryStorage();
+    const cards = questions([['a', 'A'], ['b', 'B'], ['c', 'C']]);
+    const first = new LearningQueue(storage, () => 0.4);
+    const session = first.startNew(cards, new Map(), now);
+    const completedId = session.pendingQuestionIds[0];
+    const nextId = session.pendingQuestionIds[1];
+    first.completeCurrent(completedId, now + 1);
+    const reopened = new LearningQueue(storage, () => 0.9).load(cards, new Map(), now + 2);
+    assert(reopened.pendingQuestionIds[0] === nextId, 'queue did not resume at next card');
+  });
+
+  await run('rating a card persists the next card across reopening', async () => {
+    const storage = new MemoryStorage();
+    const cards = questions([['a', 'A'], ['b', 'B'], ['c', 'C']]);
+    app.questions = cards;
+    app.progressMap = new Map();
+    app.learningQueueStore = new LearningQueue(storage, () => 0.3);
+    app.learningQueue = app.learningQueueStore.load(cards, app.progressMap, now);
+    app.flashcardQuestions = app.learningQueue.pendingQuestionIds.map(
+      id => cards.find(card => card.id === id)
+    );
+    app.currentFCIndex = 0;
+    app.db = { saveProgress: async () => {} };
+    app.calculateSM2 = () => ({
+      repetitions: 1,
+      interval: 1,
+      easinessFactor: 2.5,
+      dueDate: new Date(now + 86400000).toISOString()
+    });
+    app.updateDashboard = () => {};
+    const nextId = app.flashcardQuestions[1].id;
+    const originalSetTimeout = window.setTimeout;
+    window.setTimeout = callback => {
+      callback();
+      return 0;
+    };
+    try {
+      await app.rateFlashcard(4);
+    } finally {
+      window.setTimeout = originalSetTimeout;
+    }
+
+    const restored = new LearningQueue(storage, () => 0.9).load(cards, app.progressMap, now + 1);
+    assert(restored.pendingQuestionIds[0] === nextId, 'rating did not persist the next card');
+  });
+
+  await run('leaving and returning to the flashcard screen keeps the next card', () => {
+    const storage = new MemoryStorage();
+    const cards = questions([['a', 'A'], ['b', 'B'], ['c', 'C'], ['d', 'D']]);
+    const progress = new Map(
+      ['a', 'b', 'c'].map(id => [
+        id,
+        { dueDate: new Date(now - 1000).toISOString() }
+      ])
+    );
+    let randomValue = 0;
+    app.questions = cards;
+    app.progressMap = progress;
+    app.learningQueueStore = new LearningQueue(storage, () => randomValue);
+    app.learningQueue = app.learningQueueStore.load(cards, app.progressMap, now);
+    app.updateDashboard = () => {};
+    const expectedOrder = [...app.learningQueue.pendingQuestionIds];
+    randomValue = 0.99;
+
+    app.startSmartSession();
+    assert(
+      JSON.stringify(app.learningQueue.pendingQuestionIds) === JSON.stringify(expectedOrder),
+      `Smart-Session changed the saved queue order: ${expectedOrder} -> ${app.learningQueue.pendingQuestionIds}`
+    );
+    app.showScreen('flashcards');
+    app.showScreen('dashboard');
+    app.showScreen('flashcards');
+    assert(
+      JSON.stringify(app.learningQueue.pendingQuestionIds) === JSON.stringify(expectedOrder),
+      'navigation reset the queue order'
+    );
+  });
+
+  await run('queue completion is retained until a new session is started', async () => {
+    const queue = new LearningQueue(new MemoryStorage(), () => 0.5);
+    const cards = questions([['a', 'A']]);
+    const progress = new Map();
+    const state = queue.startNew(cards, progress, now);
+    const initialCount = state.pendingQuestionIds.length;
+    progress.set('a', {
+      id: 'a',
+      lastReviewed: new Date().toISOString(),
+      dueDate: new Date(now + 86400000).toISOString()
+    });
+    queue.completeCurrent('a', now + 2);
+    assert(queue.load(cards, progress, now + 3).completed, 'completed queue reopened as active');
+    app.questions = cards;
+    app.progressMap = progress;
+    app.learningQueueStore = queue;
+    app.learningQueue = queue.state;
+    app.updateDashboard = () => {};
+    app.startSmartSession();
+    assert(!app.learningQueue.completed, 'Smart-Session did not start a new queue');
+    assert(initialCount === 1, 'initial queue was not created');
+
+    app.db = { saveProgress: async () => {} };
+    app.calculateSM2 = () => ({
+      repetitions: 2,
+      interval: 6,
+      easinessFactor: 2.5,
+      dueDate: new Date(Date.now() + 86400000).toISOString()
+    });
+    const originalSetTimeout = window.setTimeout;
+    window.setTimeout = callback => {
+      callback();
+      return 0;
+    };
+    try {
+      await app.rateFlashcard(4);
+    } finally {
+      window.setTimeout = originalSetTimeout;
+    }
+    assert(
+      document.getElementById('fcQuestionFront').textContent.includes('Alle aktuell fälligen'),
+      'completed session did not show its completion state'
+    );
+    assert(
+      document.getElementById('fcRatingButtons').classList.contains('hidden'),
+      'ratings remained available after queue completion'
+    );
+  });
+
+  await run('question additions and removals preserve a valid next card', () => {
+    const queue = new LearningQueue(new MemoryStorage(), () => 0.3);
+    const initial = queue.startNew(questions([['a', 'A'], ['b', 'B']]), new Map(), now);
+    const nextId = initial.pendingQuestionIds[0];
+    const reconciled = queue.reconcile(questions([[nextId, 'A'], ['new', 'C']]), new Map(), now + 1);
+    assert(reconciled.pendingQuestionIds[0] === nextId, 'next card changed unexpectedly');
+    assert(reconciled.pendingQuestionIds.includes('new'), 'new card was not added');
+    assert(reconciled.pendingQuestionIds.every(id => id === nextId || id === 'new'), 'removed card remains queued');
+  });
+
+  await run('offline queue uses local storage and leaves existing progress untouched', () => {
+    const originalFetch = window.fetch;
+    try {
+      window.fetch = undefined;
+      const storage = new MemoryStorage();
+      const cards = questions([['a', 'A'], ['b', 'B']]);
+      const state = new LearningQueue(storage, () => 0.5).startNew(cards, new Map(), now);
+      const restored = new LearningQueue(storage, () => 0.1).load(cards, new Map(), now + 1);
+      assert(JSON.stringify(restored.pendingQuestionIds) === JSON.stringify(state.pendingQuestionIds), 'offline restore failed');
+      assert(storage.getItem('einbuergerungProgress') === 'preserve', 'existing progress key changed');
+    } finally {
+      window.fetch = originalFetch;
+    }
+  });
+  })();
+</script>

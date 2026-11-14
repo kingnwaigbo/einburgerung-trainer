@@ -158,6 +158,9 @@ class App {
     this.flashcardQuestions = [];
     this.progressMap = new Map();
     this.currentFCIndex = 0;
+    this.flashcardRatingPending = false;
+    this.learningQueueStore = new LearningQueue(localStorage);
+    this.learningQueue = null;
     this.interviewQuestions = [];
     this.currentInterviewIndex = 0;
     this.interviewRecognition = null;
@@ -184,6 +187,7 @@ class App {
 
     const progressList = await this.db.getAllProgress();
     progressList.forEach(p => this.progressMap.set(p.id, p));
+    this.learningQueue = this.learningQueueStore.load(this.questions, this.progressMap);
 
     this.updateDashboard();
     this.registerServiceWorker();
@@ -390,23 +394,10 @@ class App {
   startSmartSession() {
     const flashcards = this.questions.filter(q => q.type === 'flashcard');
     if (flashcards.length > 0) {
-      const now = Date.now();
-      const dueCards = flashcards.filter(q => {
-        const progress = this.progressMap.get(q.id);
-        return !progress || !progress.dueDate || new Date(progress.dueDate).getTime() <= now;
-      });
-      const sessionCards = dueCards.length > 0
-        ? dueCards
-        : flashcards.sort((a, b) => {
-            const aDue = new Date(this.progressMap.get(a.id)?.dueDate || 0).getTime();
-            const bDue = new Date(this.progressMap.get(b.id)?.dueDate || 0).getTime();
-            return aDue - bDue;
-          });
-
+      if (!this.learningQueue || this.learningQueue.completed) {
+        this.learningQueue = this.learningQueueStore.startNew(this.questions, this.progressMap);
+      }
       this.showScreen('flashcards');
-      this.flashcardQuestions = sessionCards;
-      this.currentFCIndex = 0;
-      this.displayCurrentFlashcard();
       return;
     }
 
@@ -455,7 +446,10 @@ class App {
 
   async rateFlashcard(quality) {
     const q = this.flashcardQuestions[this.currentFCIndex];
-    if (!q) return;
+    if (!q || this.flashcardRatingPending) return;
+    this.flashcardRatingPending = true;
+    const ratingButtons = document.querySelectorAll('#fcRatingButtons button');
+    ratingButtons.forEach(button => { button.disabled = true; });
 
     const existing = this.progressMap.get(q.id) || {
       id: q.id,
@@ -474,52 +468,82 @@ class App {
     try {
       await this.db.saveProgress(updated);
     } catch (error) {
+      this.flashcardRatingPending = false;
+      ratingButtons.forEach(button => { button.disabled = false; });
       alert(error.message);
       return;
     }
     this.progressMap.set(q.id, updated);
 
-    // Reset card flip & show next card
+    try {
+      this.learningQueueStore.completeCurrent(q.id);
+    } catch (error) {
+      alert(`Fortschritt wurde gespeichert, aber die Kartenposition konnte nicht gespeichert werden: ${error.message}`);
+    }
+
+    this.learningQueue = this.learningQueueStore.state;
+    this.syncFlashcardQuestions();
+    this.flashcardRatingPending = false;
+    ratingButtons.forEach(button => { button.disabled = false; });
     document.getElementById('cardInner').classList.remove('flipped');
-    this.currentFCIndex = (this.currentFCIndex + 1) % this.flashcardQuestions.length;
+    this.updateDashboard();
     setTimeout(() => this.displayCurrentFlashcard(), 300);
   }
 
   // --- FLASHCARD MODE ---
 
-loadFlashcards() {
-  this.flashcardQuestions = this.questions.filter(
-    q => q.type === 'flashcard'
-  );
-
-  this.currentFCIndex = 0;
-
-  if (this.flashcardQuestions.length === 0) {
-    document.getElementById('flashcardCounter').textContent = '0 / 0';
-    document.getElementById('fcTopicFront').textContent = '';
-    document.getElementById('fcDiffFront').textContent = '';
-    document.getElementById('fcQuestionFront').textContent =
-      'Keine Karteikarten vorhanden.';
-    document.getElementById('fcTopicBack').textContent = '';
-    document.getElementById('fcAnswerBack').textContent = '';
-    document.getElementById('fcExplanationBack').textContent = '';
-    document.getElementById('fcSourceBack').textContent = '';
-    document.getElementById('fcRatingButtons').classList.add('hidden');
-    document.getElementById('cardInner').classList.remove('flipped');
-    return;
+  syncFlashcardQuestions() {
+    const questionsById = new Map(
+      this.questions
+        .filter(question => question.type === 'flashcard')
+        .map(question => [question.id, question])
+    );
+    this.flashcardQuestions = (this.learningQueue?.pendingQuestionIds || [])
+      .map(id => questionsById.get(id))
+      .filter(Boolean);
+    this.currentFCIndex = 0;
   }
 
-  document.getElementById('fcRatingButtons').classList.remove('hidden');
-  document.getElementById('cardInner').classList.remove('flipped');
-  this.displayCurrentFlashcard();
-}
+  loadFlashcards() {
+    this.learningQueueStore.state = this.learningQueue;
+    this.learningQueue = this.learningQueueStore.reconcile(this.questions, this.progressMap);
+    this.learningQueue = this.learningQueueStore.state;
+    this.syncFlashcardQuestions();
 
+    if (this.flashcardQuestions.length === 0) {
+      const cardInner = document.getElementById('cardInner');
+      const ratingButtons = document.getElementById('fcRatingButtons');
+      const completed = this.learningQueue?.completed;
+      document.getElementById('flashcardCounter').textContent = completed ? 'Lerneinheit abgeschlossen' : '0 / 0';
+      document.getElementById('fcTopicFront').textContent = '';
+      document.getElementById('fcDiffFront').textContent = '';
+      document.getElementById('fcQuestionFront').textContent =
+        completed ? 'Alle aktuell fälligen und ungelernten Karten sind bewertet.' : 'Keine Karteikarten vorhanden.';
+      document.getElementById('fcTopicBack').textContent = '';
+      document.getElementById('fcAnswerBack').textContent = '';
+      document.getElementById('fcExplanationBack').textContent = '';
+      document.getElementById('fcSourceBack').textContent = '';
+      ratingButtons.classList.add('hidden');
+      cardInner.classList.remove('flipped');
+      return;
+    }
+
+    document.getElementById('fcRatingButtons').classList.remove('hidden');
+    document.getElementById('cardInner').classList.remove('flipped');
+    this.displayCurrentFlashcard();
+  }
 
   displayCurrentFlashcard() {
     const q = this.flashcardQuestions[this.currentFCIndex];
-    if (!q) return;
+    if (!q) {
+      this.loadFlashcards();
+      return;
+    }
 
-    document.getElementById('flashcardCounter').textContent = `${this.currentFCIndex + 1} / ${this.flashcardQuestions.length}`;
+    const completedCount = this.learningQueue.completedQuestionIds.length;
+    const sessionTotal = completedCount + this.learningQueue.pendingQuestionIds.length;
+    document.getElementById('flashcardCounter').textContent =
+      `${completedCount + 1} / ${sessionTotal}`;
     document.getElementById('fcTopicFront').textContent = q.topic;
     document.getElementById('fcDiffFront').textContent = q.difficulty || 'Mittel';
     document.getElementById('fcQuestionFront').textContent = q.question;
@@ -720,6 +744,11 @@ loadFlashcards() {
         const questionsToSave = imported.questions || imported;
         await this.db.saveQuestions(questionsToSave);
         this.questions = await this.db.getAllQuestions();
+        this.learningQueueStore.state = this.learningQueue;
+        this.learningQueue = this.learningQueueStore.reconcile(this.questions, this.progressMap);
+        if (!document.getElementById('screen-flashcards').classList.contains('hidden')) {
+          this.loadFlashcards();
+        }
         alert(`${questionsToSave.length} Fragen erfolgreich importiert!`);
         this.updateDashboard();
       } catch (err) {
@@ -753,6 +782,10 @@ loadFlashcards() {
         });
         localStorage.removeItem(PROGRESS_STORAGE_KEY);
         this.progressMap.clear();
+        this.learningQueueStore.state = this.learningQueue;
+        this.learningQueue = this.learningQueueStore.reconcile(this.questions, this.progressMap);
+        this.learningQueue = this.learningQueueStore.state;
+        this.syncFlashcardQuestions();
         this.updateDashboard();
         alert('Fortschritt zurückgesetzt.');
       } catch (error) {
